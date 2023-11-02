@@ -4,9 +4,7 @@ body {
 
 /* Mapbox code from European Startups */
 #map {
-  /* position: absolute; */
-  top: 0;
-  bottom: 0;
   width: 80%;
+  height: 400px; /* or you can use percentages, like 60vh */
   margin:auto;
 }
