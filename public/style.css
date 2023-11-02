@@ -1,0 +1,12 @@
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Mapbox code from European Startups */
+#map {
+  /* position: absolute; */
+  top: 0;
+  bottom: 0;
+  width: 80%;
+  margin:auto;
+}
