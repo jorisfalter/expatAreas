@@ -1,1 +1,3 @@
-# expat areas app
+# Expat areas app
+
+## Tech Used
