@@ -40,7 +40,7 @@ map.on("load", function () {
     source: "algarve", // reference the data source
     layout: {},
     paint: {
-      "fill-color": "#FFFF00", // yellow color
+      "fill-color": "#0000FF", // yellow color
       "fill-opacity": 0.6,
     },
   });
