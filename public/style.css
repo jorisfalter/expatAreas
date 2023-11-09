@@ -8,3 +8,44 @@ body {
   height: 400px; /* or you can use percentages, like 60vh */
   margin:auto;
 }
+
+.airlineFilter{
+  width: 80%;
+  margin:auto;
+}
+
+.airline {
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+  border-radius: 5px;
+  width: 100px; /* Fixed width */
+  height: 70px; /* Fixed height */
+  object-fit: contain;
+  box-sizing: border-box; /* Include the border in the width and height */
+}
+
+.image-container {
+  position: relative;
+  display: inline-block; /* Adjust the display as needed for your layout */
+  width: 100px; /* Same width as the .airline class for consistency */
+  font-size: 0; /* This removes any extra space that inline-block might generate */
+  box-sizing: border-box; /* Include the border in the width and height */
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Centers the text exactly */
+  width: 80%; /* Now this is 80% of the container's width */
+  color: white; /* Text color */
+  font-size: 20px; /* Adjust as necessary, consider dynamic sizing for longer text */
+  font-weight: bold; /* Makes the text bold */
+  text-align: center; /* Ensures text is centered horizontally */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin: 0; /* Ensuring no additional margin */
+  padding: 0 10%; /* Add padding to prevent text from touching the borders */
+}
+
+

@@ -32,7 +32,6 @@ map.on("load", function () {
     type: "geojson",
     data: algarveGeoJSON,
   });
-
   // Add a new layer to visualize the polygon.
   map.addLayer({
     id: "algarve-layer",

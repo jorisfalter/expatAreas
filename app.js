@@ -15,9 +15,7 @@ app.use(
 );
 
 app.get("/", function (req, res) {
-  res.render("index", {
-    // mapboxAccessToken: process.env.MAPBOX_ACCESS_TOKEN,
-  });
+  res.render("index", {});
 });
 
 app.post("/", function (req, res) {});
