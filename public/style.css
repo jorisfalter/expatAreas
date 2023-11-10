@@ -40,7 +40,7 @@ body {
   transform: translate(-50%, -50%); /* Centers the text exactly */
   width: 80%; /* Now this is 80% of the container's width */
   color: white; /* Text color */
-  font-size: 20px; /* Adjust as necessary, consider dynamic sizing for longer text */
+  font-size: 12px; /* Adjust as necessary, consider dynamic sizing for longer text */
   font-weight: bold; /* Makes the text bold */
   text-align: center; /* Ensures text is centered horizontally */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
