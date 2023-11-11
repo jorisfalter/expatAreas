@@ -75,3 +75,47 @@ map.on("load", function () {
     tooltip.style.display = "none";
   });
 });
+
+// Coordinates and zoom levels for each region
+const locations = {
+  europe: {
+    center: [10.549316, 39.986836],
+    zoom: 3,
+  },
+  caribbean: {
+    center: [-75.3412, 18.0425],
+    zoom: 5,
+  },
+  southeastAsia: {
+    center: [104.1954, 11.576],
+    zoom: 4,
+  },
+};
+
+// Function to fly to a specific region
+function flyToRegion(region) {
+  if (locations[region]) {
+    map.flyTo({
+      center: locations[region].center,
+      zoom: locations[region].zoom,
+      essential: true,
+    });
+  }
+}
+
+// Attaching event listeners using querySelector
+document.querySelector(".europe-button").addEventListener("click", function () {
+  flyToRegion("europe");
+});
+
+document
+  .querySelector(".caribbean-button")
+  .addEventListener("click", function () {
+    flyToRegion("caribbean");
+  });
+
+document
+  .querySelector(".south-east-asia-button")
+  .addEventListener("click", function () {
+    flyToRegion("southeastAsia");
+  });
