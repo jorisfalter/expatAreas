@@ -84,11 +84,15 @@ const locations = {
   },
   caribbean: {
     center: [-75.3412, 18.0425],
-    zoom: 5,
+    zoom: 4,
   },
   southeastAsia: {
     center: [104.1954, 11.576],
-    zoom: 4,
+    zoom: 3,
+  },
+  greece: {
+    center: [24.277831, 38.693123],
+    zoom: 4.8,
   },
 };
 
@@ -119,3 +123,7 @@ document
   .addEventListener("click", function () {
     flyToRegion("southeastAsia");
   });
+
+document.querySelector(".greece-button").addEventListener("click", function () {
+  flyToRegion("greece");
+});
