@@ -1,6 +1,6 @@
 //// This is the public Mapbox code >> change to one specific for this
 mapboxgl.accessToken =
-  "pk.eyJ1Ijoiam9yaXNib3JpcyIsImEiOiJjbG1lam95ZWQxeXhjM2ZteGY2NDhqY2ltIn0.UnfVT_V85n8-D4IN7lxcnA";
+  "pk.eyJ1Ijoiam9yaXNib3JpcyIsImEiOiJjbG93aTdpb2cwNjBxMmptb2YyMXIxY2kwIn0.lHB4wVJZ8uNndWlXrzzVFw";
 
 const map = new mapboxgl.Map({
   container: "map",
