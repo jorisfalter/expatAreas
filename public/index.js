@@ -5,8 +5,8 @@ mapboxgl.accessToken =
 const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/jorisboris/clmdk27ll01bw01qx24l12bnw",
-  center: [-8.229492, 37.192198],
-  zoom: 8,
+  center: [10.549316, 39.986836],
+  zoom: 3,
 });
 
 const algarveGeoJSON = {
