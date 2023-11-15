@@ -1,7 +1,9 @@
 {
     "algarve": {
       "type": "Feature",
-      "properties": {},
+      "properties": {"tooltipContent":
+      "Cost of living: medium<br>Population: 500,000 inhabitants<br>Population in high season: <br>Average population age: 45<br>Avg hottest month temp: 29 degrees celsius<br>Avg coldest month temp: 16.7 degrees celsius<br>Number of international schools: 13"
+},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -17,7 +19,7 @@
     },
     "tenerife": {
       "type": "Feature",
-      "properties": {},
+      "properties": {      "tooltipContent": "tenerife!!"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -30,6 +32,7 @@
           ]
         ]
       }
+
     }
   }
   

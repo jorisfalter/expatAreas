@@ -15,7 +15,6 @@ const algarveGeoJSON = {
   geometry: {
     type: "Polygon",
     coordinates: [
-      // Replace with the actual coordinates for the Algarve region
       [
         [-8.995264387023342, 37.52613001504033],
         [-8.995264387023342, 37.027291043969406],
@@ -33,7 +32,6 @@ const tenerifeGeoJSON = {
   geometry: {
     type: "Polygon",
     coordinates: [
-      // Replace with the actual coordinates for the Algarve region
       [
         [-17.25, 28.75],
         [-16, 28.75],
@@ -49,8 +47,6 @@ const regions = [
   {
     id: "algarve",
     geojson: algarveGeoJSON,
-    tooltipContent:
-      "Cost of living: medium<br>Population: 500,000 inhabitants<br>Population in high season: <br>Average population age: 45<br>Avg hottest month temp: 29 degrees celsius<br>Avg coldest month temp: 16.7 degrees celsius<br>Number of international schools: 13",
 
     // ... other properties
   },
@@ -63,41 +59,42 @@ const regions = [
   // ... Add more regions
 ];
 
-map.on("load", function () {
-  regions.forEach((region) => {
-    // Add source for each region
-    map.addSource(region.id, {
-      type: "geojson",
-      data: region.geojson,
-    });
+// Function to load GeoJSON data from a file
+function loadGeoJSON(url) {
+  return fetch(url)
+    .then((response) => response.json())
+    .catch((error) => console.log("Error loading the GeoJSON data:", error));
+}
 
-    // Add layer for each region
-    map.addLayer({
-      id: `${region.id}-layer`,
-      type: "fill",
-      source: region.id,
-      paint: {
-        "fill-color": "#0000FF",
-        "fill-opacity": 0.6,
-      },
-    });
+loadGeoJSON("regions.json").then((regionsData) => {
+  map.on("load", function () {
+    // Add source and layer for each region
+    Object.entries(regionsData).forEach(([regionId, geojsonData]) => {
+      map.addSource(regionId, { type: "geojson", data: geojsonData });
+      map.addLayer({
+        id: `${regionId}-layer`,
+        type: "fill",
+        source: regionId,
+        paint: { "fill-color": "#0000FF", "fill-opacity": 0.6 },
+      });
 
-    // Add mouseenter event for each layer
-    map.on("mouseenter", `${region.id}-layer`, function (e) {
-      map.getCanvas().style.cursor = "pointer";
-      var coordinates = e.lngLat;
-      var tooltip = document.getElementById("tooltip");
-      tooltip.innerHTML = region.tooltipContent;
-      tooltip.style.display = "block";
-      tooltip.style.left = e.point.x + "px";
-      tooltip.style.top = e.point.y + "px";
-    });
+      // Add mouseenter event for each layer
+      map.on("mouseenter", `${regionId}-layer`, function (e) {
+        map.getCanvas().style.cursor = "pointer";
+        var coordinates = e.lngLat;
+        var tooltip = document.getElementById("tooltip");
+        tooltip.innerHTML = e.features[0].properties.tooltipContent;
+        tooltip.style.display = "block";
+        tooltip.style.left = e.point.x + "px";
+        tooltip.style.top = e.point.y + "px";
+      });
 
-    // Add mouseleave event for each layer
-    map.on("mouseleave", `${region.id}-layer`, function () {
-      map.getCanvas().style.cursor = "";
-      var tooltip = document.getElementById("tooltip");
-      tooltip.style.display = "none";
+      // Add mouseleave event for each layer
+      map.on("mouseleave", `${regionId}-layer`, function () {
+        map.getCanvas().style.cursor = "";
+        var tooltip = document.getElementById("tooltip");
+        tooltip.style.display = "none";
+      });
     });
   });
 });
