@@ -32,19 +32,14 @@ function generateOvalCoordinates(coord1, coord2, coord3, coord4, numPoints) {
 }
 
 // Example usage:
-const coord1 = [23.5, 35.7];
-const coord2 = [27.0, 35.7];
-const coord3 = [27.0, 33.5];
-const coord4 = [23.5, 33.5];
+
 const numPoints = 20; // Adjust as needed
 
 const ovalCoordinates = generateOvalCoordinates(
-  coord1,
-  coord2,
-  coord3,
-  coord4,
+  [34.8, 24.91],
+  [35.34, 23.52],
+  [35.55, 24.93],
+  [35.13, 26.37],
   numPoints
 );
 console.log(ovalCoordinates);
-
-generateOvalCoordinates([23.5, 35.7], [27.0, 35.7], [27.0, 33.5], [23.5, 33.5]);
