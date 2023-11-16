@@ -106,4 +106,39 @@
         ]
       }
     }
+    ,
+    "Phuket": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "Phuket!!"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+   
+            [98.23,8.19],
+            [98.47,8.13],
+            [98.46,7.71],
+            [98.26,7.73],
+            [98.23,8.19]
+
+          ]
+        ]
+      }
+    },
+    "Bali": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "Bali!!"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [114.48,-8],
+            [115.79,-8],
+            [115.79,-8.82],
+            [114.46,-8.82],
+            [114.48,-8]
+          ]
+        ]
+      }
+    }
   }

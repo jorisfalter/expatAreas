@@ -111,8 +111,8 @@ const locations = {
     zoom: 4,
   },
   southeastAsia: {
-    center: [104.1954, 11.576],
-    zoom: 3,
+    center: [104.1954, 0.976],
+    zoom: 3.5,
   },
   greece: {
     center: [24.277831, 38.693123],
