@@ -140,5 +140,69 @@
           ]
         ]
       }
+    },
+    "Curacao": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "Curacao!!"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-69.21, 12.42],
+            [-69.21, 12.01],
+            [-68.69, 12.01],
+            [-68.69, 12.42],
+            [-69.21, 12.42]
+          ]
+        ]
+      }
+    },
+    "Tortola": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "Tortola!!"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-64.72,18.47],
+            [-64.72, 18.37],
+            [-64.53,18.37],
+            [-64.53, 18.47],
+            [-64.72,18.47]
+          ]
+        ]
+      }
+    },
+    "Madeira": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "Madeira!!"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-17.36, 32.93],
+            [-16.58,32.9],
+            [-16.58,32.39],
+            [-17.36,32.39],
+            [-17.36,32.9]    
+          ]
+        ]
+      }
+    },
+    "empty": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "empty!!"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        ]
+      }
     }
   }
