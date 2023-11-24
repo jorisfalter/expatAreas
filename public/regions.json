@@ -189,6 +189,22 @@
         ]
       }
     },
+    "Playa Del Carmen": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "Playa Del Carmen!!"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-86.94, 20.79],
+            [-86.94,20.55],
+            [-87.24,20.55],
+            [-87.24,20.79],
+            [-86.94,20.79]
+          ]
+        ]
+      }
+    },
     "empty": {
       "type": "Feature",
       "properties": {      "tooltipContent": "empty!!"},
