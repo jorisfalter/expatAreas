@@ -256,20 +256,22 @@
     },
      "Andalucia": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "<b>Andalucia</b><br>Notable Schools: Alma Forest School"},
+      "properties": {      "tooltipContent": "<b>South-East Andalucia</b><br>Notable Schools: Alma Forest School"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
-            [ -7.01,38.48],
-            [ -7.01,36.12],
+            [ -5.20, 37.17],
+            [ -5.20,36.12],
             [ -1.71,36.12],
-            [-1.71,38.48],
-            [-7.01,38.48]
+            [-1.71,37.17],
+            [-5.20, 37.17]
           ]
         ]
       }
     },
+
+  
 
     "empty": {
       "type": "Feature",
