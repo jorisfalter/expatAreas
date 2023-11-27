@@ -109,7 +109,7 @@
     ,
     "Phuket": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "<b>Phuket</b><br>Notable Communities: Homa"},
+      "properties": {      "tooltipContent": "<b>Phuket</b><br>Notable Communities: Homa<br>Notable Schools: UWC"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -127,7 +127,7 @@
     },
     "Bali": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Bali!!"},
+      "properties": {      "tooltipContent": "<b>Bali</b><br>Notable Schools: The Green School<br>Notable Communities: Boundless Life"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -201,6 +201,86 @@
             [-87.24,20.55],
             [-87.24,20.79],
             [-86.94,20.79]
+          ]
+        ]
+      }
+    },
+    "Tulum": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "<b>Tulum</b><br>Notable Schools: The Green School"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-87.52, 20.25 ],
+            [-87.52,20.12],
+            [-87.38,20.12],
+            [-87.38,20.25],
+            [-87.52, 20.25]
+          ]
+        ]
+      }
+    },
+    "Roatan": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "<b>Roatan</b><br>Notable Communities: Prospera"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-86.67,16.47],
+            [-86.67, 16.18],
+            [-86.10, 16.18],
+            [-86.10, 16.47],
+            [-86.67,16.47]
+          ]
+        ]
+      }
+    },
+    "Sintra - Cascais": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "<b>Sintra-Cascais</b><br>Notable Communities: Boundless Life "},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-9.53, 38.93],
+            [-9.53,38.67],
+            [-9.24,38.67 ],
+            [-9.24, 38.93],
+            [-9.53, 38.93]
+          ]
+        ]
+      }
+    },
+    "Syros": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "<b>Syros</b><br>Notable Communities: Boundless Life"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [37.53, 24.80],
+            [37.53, 25.05],
+            [37.28, 25.05],
+            [37.28, 24.80],
+            [37.53, 24.80]
+          ]
+        ]
+      }
+    },
+    "empty": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "empty!!"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [],
+            [],
+            [],
+            [],
+            []
           ]
         ]
       }
