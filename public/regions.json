@@ -19,7 +19,7 @@
     },
     "tenerife": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "tenerife!!"},
+      "properties": {      "tooltipContent": "Tenerife"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -36,7 +36,7 @@
     },
     "Crete": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Crete!!"},
+      "properties": {      "tooltipContent": "Crete"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -54,7 +54,7 @@
     },
     "Corfu": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Corfu!!"},
+      "properties": {      "tooltipContent": "Corfu"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -72,7 +72,7 @@
     },
     "Ibiza": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Ibiza!!"},
+      "properties": {      "tooltipContent": "Ibiza"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -91,7 +91,7 @@
     },
     "Mallorca": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Mallorca!!"},
+      "properties": {      "tooltipContent": "Mallorca"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -143,7 +143,7 @@
     },
     "Curacao": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Curacao!!"},
+      "properties": {      "tooltipContent": "Curacao"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -159,7 +159,7 @@
     },
     "Tortola": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Tortola!!"},
+      "properties": {      "tooltipContent": "Tortola"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -173,25 +173,10 @@
         ]
       }
     },
-    "Madeira": {
-      "type": "Feature",
-      "properties": {      "tooltipContent": "Madeira!!"},
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [-17.36, 32.93],
-            [-16.58,32.9],
-            [-16.58,32.39],
-            [-17.36,32.39],
-            [-17.36,32.9]    
-          ]
-        ]
-      }
-    },
+
     "Playa Del Carmen": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Playa Del Carmen!!"},
+      "properties": {      "tooltipContent": "Playa Del Carmen"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -260,34 +245,19 @@
         "type": "Polygon",
         "coordinates": [
           [
-            [37.53, 24.80],
-            [37.53, 25.05],
-            [37.28, 25.05],
-            [37.28, 24.80],
-            [37.53, 24.80]
+            [24.80,37.53],
+            [25.05, 37.53],
+            [25.05, 37.28],
+            [24.80,37.28],
+            [24.80, 37.53]
           ]
         ]
       }
     },
+
     "empty": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "empty!!"},
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [],
-            [],
-            [],
-            [],
-            []
-          ]
-        ]
-      }
-    },
-    "empty": {
-      "type": "Feature",
-      "properties": {      "tooltipContent": "empty!!"},
+      "properties": {      "tooltipContent": "empty"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
