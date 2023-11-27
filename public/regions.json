@@ -254,6 +254,22 @@
         ]
       }
     },
+     "Andalucia": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "<b>Andalucia</b><br>Notable Schools: Alma Forest School"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [ -7.01,38.48],
+            [ -7.01,36.12],
+            [ -1.71,36.12],
+            [-1.71,38.48],
+            [-7.01,38.48]
+          ]
+        ]
+      }
+    },
 
     "empty": {
       "type": "Feature",
