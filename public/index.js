@@ -71,12 +71,12 @@ loadGeoJSON("regions.json").then((regionsData) => {
     // Add source and layer for each region
     Object.entries(regionsData).forEach(([regionId, geojsonData]) => {
       map.addSource(regionId, { type: "geojson", data: geojsonData });
-      map.addLayer({
-        id: `${regionId}-layer`,
-        type: "fill",
-        source: regionId,
-        paint: { "fill-color": "#0000FF", "fill-opacity": 0.6 },
-      });
+      // map.addLayer({
+      //   id: `${regionId}-layer`,
+      //   type: "fill",
+      //   source: regionId,
+      //   paint: { "fill-color": "#0000FF", "fill-opacity": 0.6 },
+      // });
 
       // Add mouseenter event for each layer
       map.on("mouseenter", `${regionId}-layer`, function (e) {
@@ -119,6 +119,10 @@ const locations = {
     center: [24.277831, 38.693123],
     zoom: 4.8,
   },
+  iberia: {
+    center: [0, 0],
+    zoom: 4.8,
+  },
 };
 
 // Function to fly to a specific region
@@ -151,4 +155,8 @@ document
 
 document.querySelector(".greece-button").addEventListener("click", function () {
   flyToRegion("greece");
+});
+
+document.querySelector(".iberia-button").addEventListener("click", function () {
+  flyToRegion("iberia");
 });
