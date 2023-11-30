@@ -83,6 +83,7 @@ loadGeoJSON("regions.json").then((regionsData) => {
         map.getCanvas().style.cursor = "pointer";
         var coordinates = e.lngLat;
         var tooltip = document.getElementById("tooltip");
+        var tooltipContent = document.getElementById("regionDescription");
         tooltip.innerHTML = e.features[0].properties.tooltipContent;
         tooltip.style.display = "block";
         tooltip.style.left = e.point.x + "px";
