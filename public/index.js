@@ -104,15 +104,15 @@ loadGeoJSON("regions.json").then((regionsData) => {
 // Coordinates and zoom levels for each region for the filters on top
 const locations = {
   europe: {
-    center: [10.549316, 39.986836],
+    center: [10.54, 39.98],
     zoom: 3,
   },
   caribbean: {
-    center: [-75.3412, 18.0425],
+    center: [-75.34, 18.04],
     zoom: 4,
   },
   southeastAsia: {
-    center: [104.1954, 0.976],
+    center: [104.19, 0.97],
     zoom: 3.5,
   },
   greece: {
@@ -121,6 +121,10 @@ const locations = {
   },
   iberia: {
     center: [-4.42, 39.79],
+    zoom: 4.8,
+  },
+  scandinavia: {
+    center: [15.35, 58.73],
     zoom: 4.8,
   },
 };
@@ -160,3 +164,9 @@ document.querySelector(".greece-button").addEventListener("click", function () {
 document.querySelector(".iberia-button").addEventListener("click", function () {
   flyToRegion("iberia");
 });
+
+document
+  .querySelector(".scandinavia-button")
+  .addEventListener("click", function () {
+    flyToRegion("scandinavia");
+  });

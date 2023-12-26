@@ -270,6 +270,22 @@
         ]
       }
     },
+    "Helsinki": {
+      "type": "Feature",
+      "properties": {      "tooltipContent": "empty"},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [24.43, 60.38 ],
+            [24.43,60.07],
+            [25.42,60.07],
+            [25.42,60.38],
+            [24.43,60.38]
+          ]
+        ]
+      }
+    },
 
   
 
