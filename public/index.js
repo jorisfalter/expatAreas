@@ -9,55 +9,56 @@ const map = new mapboxgl.Map({
   zoom: 3,
 });
 
-const algarveGeoJSON = {
-  type: "Feature",
-  properties: {},
-  geometry: {
-    type: "Polygon",
-    coordinates: [
-      [
-        [-8.995264387023342, 37.52613001504033],
-        [-8.995264387023342, 37.027291043969406],
-        [-7.513023249060555, 37.027291043969406],
-        [-7.513023249060555, 37.52613001504033],
-        [-8.995264387023342, 37.52613001504033],
-      ],
-    ],
-  },
-};
+//// I think delete
+// const algarveGeoJSON = {
+//   type: "Feature",
+//   properties: {},
+//   geometry: {
+//     type: "Polygon",
+//     coordinates: [
+//       [
+//         [-8.995264387023342, 37.52613001504033],
+//         [-8.995264387023342, 37.027291043969406],
+//         [-7.513023249060555, 37.027291043969406],
+//         [-7.513023249060555, 37.52613001504033],
+//         [-8.995264387023342, 37.52613001504033],
+//       ],
+//     ],
+//   },
+// };
 
-const tenerifeGeoJSON = {
-  type: "Feature",
-  properties: {},
-  geometry: {
-    type: "Polygon",
-    coordinates: [
-      [
-        [-17.25, 28.75],
-        [-16, 28.75],
-        [-16, 28],
-        [-17.25, 28],
-        [-17.25, 28.75],
-      ],
-    ],
-  },
-};
+// const tenerifeGeoJSON = {
+//   type: "Feature",
+//   properties: {},
+//   geometry: {
+//     type: "Polygon",
+//     coordinates: [
+//       [
+//         [-17.25, 28.75],
+//         [-16, 28.75],
+//         [-16, 28],
+//         [-17.25, 28],
+//         [-17.25, 28.75],
+//       ],
+//     ],
+//   },
+// };
 
-const regions = [
-  {
-    id: "algarve",
-    geojson: algarveGeoJSON,
+// const regions = [
+//   {
+//     id: "algarve",
+//     geojson: algarveGeoJSON,
 
-    // ... other properties
-  },
-  {
-    id: "tenerife",
-    geojson: tenerifeGeoJSON, // Replace with Tenerife's GeoJSON
-    tooltipContent: "Tenerife tooltip content...",
-    // ... other properties
-  },
-  // ... Add more regions
-];
+//     // ... other properties
+//   },
+//   {
+//     id: "tenerife",
+//     geojson: tenerifeGeoJSON, // Replace with Tenerife's GeoJSON
+//     tooltipContent: "Tenerife tooltip content...",
+//     // ... other properties
+//   },
+//   // ... Add more regions
+// ];
 
 // Function to load GeoJSON data from a file
 function loadGeoJSON(url) {
@@ -125,7 +126,7 @@ const locations = {
   },
   scandinavia: {
     center: [15.35, 58.73],
-    zoom: 4.8,
+    zoom: 4,
   },
 };
 
