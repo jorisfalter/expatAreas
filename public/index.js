@@ -9,57 +9,6 @@ const map = new mapboxgl.Map({
   zoom: 3,
 });
 
-//// I think delete
-// const algarveGeoJSON = {
-//   type: "Feature",
-//   properties: {},
-//   geometry: {
-//     type: "Polygon",
-//     coordinates: [
-//       [
-//         [-8.995264387023342, 37.52613001504033],
-//         [-8.995264387023342, 37.027291043969406],
-//         [-7.513023249060555, 37.027291043969406],
-//         [-7.513023249060555, 37.52613001504033],
-//         [-8.995264387023342, 37.52613001504033],
-//       ],
-//     ],
-//   },
-// };
-
-// const tenerifeGeoJSON = {
-//   type: "Feature",
-//   properties: {},
-//   geometry: {
-//     type: "Polygon",
-//     coordinates: [
-//       [
-//         [-17.25, 28.75],
-//         [-16, 28.75],
-//         [-16, 28],
-//         [-17.25, 28],
-//         [-17.25, 28.75],
-//       ],
-//     ],
-//   },
-// };
-
-// const regions = [
-//   {
-//     id: "algarve",
-//     geojson: algarveGeoJSON,
-
-//     // ... other properties
-//   },
-//   {
-//     id: "tenerife",
-//     geojson: tenerifeGeoJSON, // Replace with Tenerife's GeoJSON
-//     tooltipContent: "Tenerife tooltip content...",
-//     // ... other properties
-//   },
-//   // ... Add more regions
-// ];
-
 // Function to load GeoJSON data from a file
 function loadGeoJSON(url) {
   return fetch(url)
@@ -87,8 +36,11 @@ loadGeoJSON("regions.json").then((regionsData) => {
         var tooltipContent = document.getElementById("regionDescription");
         tooltipContent.innerHTML = e.features[0].properties.tooltipContent;
         tooltip.style.display = "block";
-        tooltip.style.left = e.point.x + "px";
-        tooltip.style.top = e.point.y + "px";
+        // Get the mouse pointer's coordinates on the page
+        var mouseX = e.originalEvent.clientX;
+        var mouseY = e.originalEvent.clientY;
+        tooltip.style.left = mouseX + "px";
+        tooltip.style.top = mouseY + "px";
       });
 
       // Add mouseleave event for each layer
