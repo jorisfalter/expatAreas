@@ -19,7 +19,7 @@ body {
   border-width: 5px;
   border-color: black;
   border-radius: 5px;
-  width: 100px; /* Fixed width */
+  width: 130px; /* Fixed width */
   height: 70px; /* Fixed height */
   object-fit: contain;
   box-sizing: border-box; /* Include the border in the width and height */
@@ -28,7 +28,7 @@ body {
 .image-container {
   position: relative;
   display: inline-block; /* Adjust the display as needed for your layout */
-  width: 100px; /* Same width as the .airline class for consistency */
+  width: 130px; /* Same width as the .airline class for consistency */
   font-size: 0; /* This removes any extra space that inline-block might generate */
   box-sizing: border-box; /* Include the border in the width and height */
 }
