@@ -28,9 +28,6 @@ let diff_array_y = [
   y1 - start_array[3][1],
 ];
 
-console.log(diff_array_x);
-console.log(diff_array_y);
-
 // Make it positive
 let positive_x = diff_array_x.map((value) => Math.abs(value));
 let positive_y = diff_array_y.map((value) => Math.abs(value));
@@ -44,9 +41,6 @@ let y_maxIndex = positive_y.indexOf(y_length); // Find the index of the max valu
 let a_axis = (x_length * 1.2) / 2;
 let b_axis = (y_length * 1.2) / 2;
 
-console.log("a_axis " + a_axis);
-console.log("b_axis " + b_axis);
-
 // Now I need to find the middle point
 // I know the first coordinate
 // I just need to know the second
@@ -58,37 +52,39 @@ let y2 = start_array[y_maxIndex + 1][1];
 let Cx = x2 + (x1 - x2) / 2;
 let Cy = y2 + (y1 - y2) / 2;
 
-console.log(x2);
-console.log(y2);
-console.log(Cx);
-console.log(Cy);
-
 // I need to prepare a list of coordinates which I want to solve for y
-let x_array_zero_left = Cx - a_axis * 1.2; // should return zero for y
-let x_array_zero_right = Cx + a_axis * 1.2; // should return zero for y
+let x_array_zero_left = Cx - a_axis; // should return zero for y
+let x_array_zero_right = Cx + a_axis; // should return zero for y
 
 // this is the array of points we will find y coords for
-let x_array = [x_array_zero_left, Cx, x_array_zero_right];
+let x_array = [];
+// [x_array_zero_left, Cx, x_array_zero_right];
+let total_diff = x1 - x2;
+let diff_per_point = total_diff / 10;
+for (let j = 0; j <= 10; j++) {
+  x_array.push(x1 - diff_per_point * j);
+}
+
+// define empty results arrays
 let coordinates_pairs_pos = [];
 let coordinates_pairs_neg = [];
 
 // Now we have the center points (Cx and Cy) and the long and short axis a and b
 // We can calculate coordinates
-// for (let i = 0; i < x_array.length; i++) {
-let i = 0;
-let num = x_array[i] - Cx;
-console.log(num);
-let denom = a_axis ** 2;
-console.log(denom);
+for (let i = 0; i < x_array.length; i++) {
+  let num = (x_array[i] - Cx) ** 2;
+  console.log(num);
+  let denom = a_axis ** 2;
+  console.log(denom);
 
-let fract = num / denom;
-let below_sqrt = 1 - fract;
-let b_sqrt = b_axis * Math.sqrt(below_sqrt);
-let y_pos = Cy + b_sqrt;
-let y_neg = Cy - b_sqrt;
-coordinates_pairs_pos.push([x_array[i], y_pos]);
-coordinates_pairs_neg.push([x_array[i], y_neg]);
-// }
+  let fract = num / denom;
+  let below_sqrt = 1 - fract;
+  let b_sqrt = b_axis * Math.sqrt(below_sqrt);
+  let y_pos = Cy + b_sqrt;
+  let y_neg = Cy - b_sqrt;
+  coordinates_pairs_pos.push([x_array[i], y_pos]);
+  coordinates_pairs_neg.push([x_array[i], y_neg]);
+}
 
 console.log(coordinates_pairs_pos);
 console.log(coordinates_pairs_neg);
