@@ -1,18 +1,18 @@
-// let start_array = [
-//   [-8.995264387023342, 37.52613001504033],
-//   [-8.995264387023342, 37.027291043969406],
-//   [-7.513023249060555, 37.027291043969406],
-//   [-7.513023249060555, 37.52613001504033],
-//   [-8.995264387023342, 37.52613001504033],
-// ];
-
 let start_array = [
-  [-2, -1],
-  [-2, 1],
-  [2, 1],
-  [2, -1],
-  [-2, -1],
+  [-8.995264387023342, 37.52613001504033],
+  [-8.995264387023342, 37.027291043969406],
+  [-7.513023249060555, 37.027291043969406],
+  [-7.513023249060555, 37.52613001504033],
+  [-8.995264387023342, 37.52613001504033],
 ];
+
+// let start_array = [
+//   [-2, -1],
+//   [-2, 1],
+//   [2, 1],
+//   [2, -1],
+//   [-2, -1],
+// ];
 
 // find the x and y distance between coordinates. Because I don't always use the same sequence (eg clockwise coords) I have to iteratively find the coordinates
 let x1 = start_array[0][0];
@@ -59,10 +59,10 @@ let x_array_zero_right = Cx + a_axis; // should return zero for y
 // this is the array of points we will find y coords for
 let x_array = [];
 // [x_array_zero_left, Cx, x_array_zero_right];
-let total_diff = x1 - x2;
-let diff_per_point = total_diff / 10;
-for (let j = 0; j <= 10; j++) {
-  x_array.push(x1 - diff_per_point * j);
+let total_diff = x_array_zero_left - x_array_zero_right;
+let diff_per_point = total_diff / 20;
+for (let j = 0; j <= 20; j++) {
+  x_array.push(x_array_zero_left - diff_per_point * j);
 }
 
 // define empty results arrays
@@ -73,9 +73,7 @@ let coordinates_pairs_neg = [];
 // We can calculate coordinates
 for (let i = 0; i < x_array.length; i++) {
   let num = (x_array[i] - Cx) ** 2;
-  console.log(num);
   let denom = a_axis ** 2;
-  console.log(denom);
 
   let fract = num / denom;
   let below_sqrt = 1 - fract;
@@ -86,5 +84,6 @@ for (let i = 0; i < x_array.length; i++) {
   coordinates_pairs_neg.push([x_array[i], y_neg]);
 }
 
-console.log(coordinates_pairs_pos);
-console.log(coordinates_pairs_neg);
+let reversed_coordinates_pairs_neg = [...coordinates_pairs_neg].reverse(); // Making a copy and reversing it
+let final_array = coordinates_pairs_pos.concat(reversed_coordinates_pairs_neg);
+console.log(final_array);
