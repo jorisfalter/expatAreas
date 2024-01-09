@@ -1,0 +1,134 @@
+{
+    "testKey": "testValue", 
+
+    "testKey2": "testValue", 
+
+
+    "algarve": {
+      "name":"Algarve",
+      "properties": {
+        "Population":{
+          "Population": "500,000 inhabitants",
+          "Population in high season":""}, 
+        "Weather":{
+          "Average population age": "45",
+          "Avg hottest month temp": "29",
+          "Avg coldest month temp": "16.7 degrees celsius"},
+        "Number of international schools": "13"
+      }
+    },
+
+    "tenerife": {
+      "name":"Tenerife",
+      "properties": {}
+    },
+
+    "crete": {
+      "name":"Crete",
+      "properties": {}
+    },
+
+    "corfu": {
+      "name":"Corfu",
+      "properties": {}
+    },
+
+    "ibiza": {
+      "name":"Ibiza",
+      "properties": {}
+    },
+    
+    "mallorca": {
+      "name":"Mallorca",
+      "properties": {}
+    },
+    
+    "phuket": {
+      "name":"Phuket",
+      "properties": { 
+        "Communities": "Homa",
+        "Schools": "UWC"
+    }},
+    
+    "bali": {
+      "name":"Bali",
+      "properties": {    
+     "Notable Schools":"The Green School",
+      "Notable Communities": "Boundless Life"}
+    },
+
+    "curacao": {
+      "name":"Curacao",
+      "properties": {}
+    },
+
+    "tortola": {
+      "name":"Tortola",
+      "properties": { }
+    },
+
+    "playaDelCarmen": {
+      "name":"Playa Del Carmen",
+      "properties": {}
+    },
+
+    "tulum": {
+      "name":"Tulum",
+      "properties": {    
+        "Notable Schools": "The Green School"}
+    },
+
+    "roatan": {
+      "name":"Roatan",
+      "properties": {    
+        "Notable Communities":"Prospera"}
+    },
+
+    "sintraCascais": {
+      "name":"Sintra - Cascais",
+      "properties": {     
+        "Notable Communities": "Boundless Life "}
+    },
+
+    "syros": {
+      "name":"Syros",
+      "properties": {    
+        "Notable Communities": "Boundless Life"}
+    },
+
+     "andalucia": {
+      "name":"Andalucia",
+      "properties": {    
+        "Notable Schools": "Alma Forest School"}
+    },
+
+    "helsinki": {
+      "name":"Helsinki",
+      "properties": {      
+        "reviews": {
+          "review1":"Pros: Living in the capital city you don't need a car - a monthly bus-pass covers all the metro/tram/bus trips you need for €50 or so. The city is also very walkable, which is particularly good for children.<br>If you have children they can go to daycare from 1year old, and the cost of that is subsidized, they start school properly at age of 7 and generally take themselves there (mostly by walking, some might cycle or take a bus).<br>The cities are safe, the houses are expensive but not out of reach, and renting isn't so bad, most buildings have double/triple glazing and are very well insulated.<br>Nature is easy to reach, and readily appreciated. Children spend a couple of hours outdoors at school, even in the winters. Also if you do get cold a sauna is a great way to warm up!<br>Lots of technology companies, relative to the city of the country, and English is frequently the working language.<br>Cons: The winters get cold, it has been -10°C for the past week, and it will get colder soon enough. The winters are also dark. As a UK-native the language is complex and alien, but willingness to learn and practice is appreciated - the con is that if you struggle to order something in broken Finnish people will usually switch to English, which helps you in the short-term, but screws you over in the long term.<br>Alcoholism is common, and winter depression, but the alcoholism in Scotland is significantly worse so don't go expecting something crazy."
+      }
+      }
+    },
+
+    "copenhagen": {
+      "name":"Copenhagen",
+      "properties": {}
+    },
+
+    "stockholm": {
+      "name":"Stockholm",
+      "properties": {}
+    },
+
+    "engadinSanktMoritz": {
+      "name":"Engadin - Sankt Moritz",
+      "properties": {"Weather": "300 days with sun per year!"}
+    },
+
+    "empty": {
+      "name":"",
+      "properties": {}
+    }
+  }
+

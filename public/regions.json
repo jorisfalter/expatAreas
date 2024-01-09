@@ -1,9 +1,9 @@
 {
-    "algarve": {
+    "testKey": "testValue", 
+  
+    "Algarve": {
       "type": "Feature",
-      "properties": {"tooltipContent":
-      "<b>Algarve</b><br>Cost of living: medium<br>Population: 500,000 inhabitants<br>Population in high season: <br>Average population age: 45<br>Avg hottest month temp: 29 degrees celsius<br>Avg coldest month temp: 16.7 degrees celsius<br>Number of international schools: 13"
-},
+      "properties": {"tooltipContent":"Algarve"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -54,9 +54,9 @@
         ]
       }
     },
-    "tenerife": {
+    "Tenerife": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Tenerife"},
+      "properties": {"tooltipContent": "Tenerife"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -73,7 +73,7 @@
     },
     "Crete": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Crete"},
+      "properties": {"tooltipContent": "Crete"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -91,7 +91,7 @@
     },
     "Corfu": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Corfu"},
+      "properties": {"tooltipContent": "Corfu"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -109,7 +109,7 @@
     },
     "Ibiza": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Ibiza"},
+      "properties": {"tooltipContent": "Ibiza"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -128,7 +128,7 @@
     },
     "Mallorca": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Mallorca"},
+      "properties": {"tooltipContent": "Mallorca"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -146,7 +146,7 @@
     ,
     "Phuket": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "<b>Phuket</b><br>Notable Communities: Homa<br>Notable Schools: UWC"},
+      "properties": {"tooltipContent": "Phuket"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -164,7 +164,7 @@
     },
     "Bali": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "<b>Bali</b><br>Notable Schools: The Green School<br>Notable Communities: Boundless Life"},
+      "properties": { "tooltipContent": "Bali"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -180,7 +180,7 @@
     },
     "Curacao": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Curacao"},
+      "properties": { "tooltipContent": "Curacao"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -196,7 +196,7 @@
     },
     "Tortola": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Tortola"},
+      "properties": { "tooltipContent": "Tortola"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -213,7 +213,7 @@
 
     "Playa Del Carmen": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Playa Del Carmen"},
+      "properties": { "tooltipContent": "Playa Del Carmen"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -229,7 +229,7 @@
     },
     "Tulum": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "<b>Tulum</b><br>Notable Schools: The Green School"},
+      "properties": { "tooltipContent": "Tulum"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -245,7 +245,7 @@
     },
     "Roatan": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "<b>Roatan</b><br>Notable Communities: Prospera"},
+      "properties": {      "tooltipContent": "Roatan"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -261,7 +261,7 @@
     },
     "Sintra - Cascais": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "<b>Sintra-Cascais</b><br>Notable Communities: Boundless Life "},
+      "properties": { "tooltipContent": "Sintra-Cascais"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -277,7 +277,7 @@
     },
     "Syros": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "<b>Syros</b><br>Notable Communities: Boundless Life"},
+      "properties": { "tooltipContent": "Syros",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -293,7 +293,7 @@
     },
      "Andalucia": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "<b>South-East Andalucia</b><br>Notable Schools: Alma Forest School"},
+      "properties": { "tooltipContent": "South-East Andalucia"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -309,8 +309,7 @@
     },
     "Helsinki": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "Pros: Living in the capital city you don't need a car - a monthly bus-pass covers all the metro/tram/bus trips you need for €50 or so. The city is also very walkable, which is particularly good for children.<br>If you have children they can go to daycare from 1year old, and the cost of that is subsidized, they start school properly at age of 7 and generally take themselves there (mostly by walking, some might cycle or take a bus).<br>The cities are safe, the houses are expensive but not out of reach, and renting isn't so bad, most buildings have double/triple glazing and are very well insulated.<br>Nature is easy to reach, and readily appreciated. Children spend a couple of hours outdoors at school, even in the winters. Also if you do get cold a sauna is a great way to warm up!<br>Lots of technology companies, relative to the city of the country, and English is frequently the working language.<br>Cons: The winters get cold, it has been -10°C for the past week, and it will get colder soon enough. The winters are also dark. As a UK-native the language is complex and alien, but willingness to learn and practice is appreciated - the con is that if you struggle to order something in broken Finnish people will usually switch to English, which helps you in the short-term, but screws you over in the long term.<br>Alcoholism is common, and winter depression, but the alcoholism in Scotland is significantly worse so don't go expecting something crazy."
-      },
+      "properties": { "tooltipContent": "Helsinki"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -326,7 +325,7 @@
     },
     "Copenhagen": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "empty"},
+      "properties": { "tooltipContent": "Copenhagen"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -343,7 +342,7 @@
     },
     "Stockholm": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "empty"},
+      "properties": { "tooltipContent": "Stockholm"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -359,9 +358,9 @@
       }
     },
 
-    "Engadin - Sankt Moritz": {
+    "Engadin - Sankt-Moritz": {
       "type": "Feature",
-      "properties": {      "tooltipContent": "300 days with sun per year!"},
+      "properties": { "tooltipContent": "Engadin - Sankt-Moritz"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -428,3 +427,4 @@
       }
     }
   }
+}

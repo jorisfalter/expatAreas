@@ -20,6 +20,27 @@ app.get("/", function (req, res) {
 
 app.post("/", function (req, res) {});
 
+const cities = require("./data/regionsContent.json");
+// console.log(cities);
+console.log("log1: " + cities["testKey"]);
+
+// to check if regionsContent is still correct
+// const testRegionsContent = require("./data/regionsContent.json");
+// console.log(testRegionsContent);
+
+app.get("/:cityName", (req, res) => {
+  let cityNameLower = req.params.cityName.toLowerCase();
+  // console.log(cities[cityNameLower]);
+  if (cities[cityNameLower]) {
+    res.render("locationPage", {
+      city: cities[cityNameLower],
+      description: "testValue",
+    });
+  } else {
+    res.status(404).send("City not found");
+  }
+});
+
 app.listen(process.env.PORT || 3000, function () {
   console.log("listening");
 });
