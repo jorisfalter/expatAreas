@@ -9,6 +9,11 @@ body {
   margin:auto;
 }
 
+h3{
+  color:white;
+  font-weight: 400;
+}
+
 .airlineFilter{
   width: 80%;
   margin:auto;
