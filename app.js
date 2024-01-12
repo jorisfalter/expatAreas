@@ -34,7 +34,6 @@ app.get("/:cityName", (req, res) => {
   if (cities[cityNameLower]) {
     res.render("locationPage", {
       city: cities[cityNameLower],
-      description: "testValue",
     });
   } else {
     res.status(404).send("City not found");
