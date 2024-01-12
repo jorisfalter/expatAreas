@@ -31,7 +31,6 @@ loadGeoJSON("regions.json").then((regionsData) => {
       // Add mouseenter event for each layer
       map.on("mouseenter", `${regionId}-layer`, function (e) {
         map.getCanvas().style.cursor = "pointer";
-        // var coordinates = e.lngLat;
         var tooltip = document.getElementById("tooltip");
         var tooltipContent = document.getElementById("regionDescription");
         tooltipContent.innerHTML = e.features[0].properties.tooltipContent;

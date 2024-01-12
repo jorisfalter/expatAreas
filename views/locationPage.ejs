@@ -21,6 +21,14 @@
     <h2>Weather</h2>
     <h2>Population</h2>
     <h2>Reviews</h2>
+    <p>
+
+        <% for(let key in city.properties.reviews) { %>
+            <p>
+                <%- city.properties.reviews[key] %>
+            </p>
+            <% } %>
+    </p>
     <p>Add Review</p>
 
     <!-- User Comments Section -->
