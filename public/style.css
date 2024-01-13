@@ -55,4 +55,15 @@ h3{
   padding: 0 10%; /* Add padding to prevent text from touching the borders */
 }
 
+#tooltip{
+  display: none; 
+  position: absolute; 
+  padding: 10px; 
+  background: blue; 
+  border-radius: 10px; 
+  font-size: 14px; 
+  text-align: center; 
+  pointer-events: none; 
+  z-index: 10;
+}
 
