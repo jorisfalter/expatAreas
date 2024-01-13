@@ -21,15 +21,16 @@ app.get("/", function (req, res) {
 app.post("/", function (req, res) {});
 
 const cities = require("./data/regionsContent.json");
-// console.log(cities);
-console.log("log1: " + cities["testKey"]);
+// console.log("log1: " + cities["engadinSanktMoritz"]);
 
 // to check if regionsContent is still correct
 // const testRegionsContent = require("./data/regionsContent.json");
 // console.log(testRegionsContent);
 
 app.get("/:cityName", (req, res) => {
-  let cityNameLower = req.params.cityName.toLowerCase();
+  // let cityNameLower = req.params.cityName.toLowerCase();
+  let cityNameLower = req.params.cityName;
+  // console.log(cityNameLower);
   // console.log(cities[cityNameLower]);
   if (cities[cityNameLower]) {
     res.render("locationPage", {

@@ -1,9 +1,6 @@
 {
     "testKey": "testValue", 
 
-    "testKey2": "testValue", 
-
-
     "algarve": {
       "name":"Algarve",
       "properties": {
