@@ -120,7 +120,7 @@
 
     "engadinSanktMoritz": {
       "name":"Engadin - Sankt Moritz",
-      "properties": {"Weather": "300 days with sun per year!"}
+      "properties": {"weather": "300 days with sun per year!"}
     },
 
     "empty": {
