@@ -40,6 +40,22 @@ loadGeoJSON("regions.json").then((regionsData) => {
         },
       });
 
+      // Add click event listener for the layer
+      map.on("click", `${regionId}-layer`, function () {
+        // Redirect to the URL
+        window.location.href = `/${regionId}`;
+      });
+
+      // Change the cursor to a pointer when the mouse is over the layer.
+      map.on("mouseenter", `${regionId}-layer`, function () {
+        map.getCanvas().style.cursor = "pointer";
+      });
+
+      // Change it back to a pointer when it leaves.
+      map.on("mouseleave", `${regionId}-layer`, function () {
+        map.getCanvas().style.cursor = "";
+      });
+
       // Add mouseenter event for each layer
       map.on("mouseenter", `${regionId}-layer`, function (e) {
         map.getCanvas().style.cursor = "pointer";

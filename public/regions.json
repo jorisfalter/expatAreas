@@ -1,7 +1,7 @@
 {
     "testKey": "testValue", 
   
-    "Algarve": {
+    "algarve": {
       "type": "Feature",
       "properties": {"tooltipContent":"Algarve"},
       "geometry": {
@@ -54,7 +54,7 @@
         ]
       }
     },
-    "Tenerife": {
+    "tenerife": {
       "type": "Feature",
       "properties": {"tooltipContent": "Tenerife"},
       "geometry": {
@@ -108,7 +108,7 @@
       }
 
     },
-    "Crete": {
+    "crete": {
       "type": "Feature",
       "properties": {"tooltipContent": "Crete"},
       "geometry": {
@@ -162,7 +162,7 @@
       }
 
     },
-    "Corfu": {
+    "corfu": {
       "type": "Feature",
       "properties": {"tooltipContent": "Corfu"},
       "geometry": {
@@ -216,7 +216,7 @@
       }
 
     },
-    "Ibiza": {
+    "ibiza": {
       "type": "Feature",
       "properties": {"tooltipContent": "Ibiza"},
       "geometry": {
@@ -268,7 +268,7 @@
 
 
     },
-    "Mallorca": {
+    "mallorca": {
       "type": "Feature",
       "properties": {"tooltipContent": "Mallorca"},
       "geometry": {
@@ -322,7 +322,7 @@
       }
     }
     ,
-    "Phuket": {
+    "phuket": {
       "type": "Feature",
       "properties": {"tooltipContent": "Phuket"},
       "geometry": {
@@ -376,7 +376,7 @@
         ]
       }
     },
-    "Bali": {
+    "bali": {
       "type": "Feature",
       "properties": { "tooltipContent": "Bali"},
       "geometry": {
@@ -429,7 +429,7 @@
         ]
       }
     },
-    "Curacao": {
+    "curacao": {
       "type": "Feature",
       "properties": { "tooltipContent": "Curacao"},
       "geometry": {
@@ -482,7 +482,7 @@
         ]
       }
     },
-    "Tortola": {
+    "tortola": {
       "type": "Feature",
       "properties": { "tooltipContent": "Tortola"},
       "geometry": {
@@ -534,7 +534,7 @@
       }
     },
 
-    "Playa Del Carmen": {
+    "playaDelCarmen": {
       "type": "Feature",
       "properties": { "tooltipContent": "Playa Del Carmen"},
       "geometry": {
@@ -587,7 +587,7 @@
         ]
       }
     },
-    "Tulum": {
+    "tulum": {
       "type": "Feature",
       "properties": { "tooltipContent": "Tulum"},
       "geometry": {
@@ -637,7 +637,7 @@
         ]
       }
     },
-    "Roatan": {
+    "roatan": {
       "type": "Feature",
       "properties": {      "tooltipContent": "Roatan"},
       "geometry": {
@@ -690,7 +690,7 @@
         ]
       }
     },
-    "Sintra - Cascais": {
+    "sintraCascais": {
       "type": "Feature",
       "properties": { "tooltipContent": "Sintra-Cascais"},
       "geometry": {
@@ -743,7 +743,7 @@
         ]
       }
     },
-    "Syros": {
+    "syros": {
       "type": "Feature",
       "properties": { "tooltipContent": "Syros",
       "geometry": {
@@ -797,7 +797,7 @@
         }
       }
     },
-     "Andalucia": {
+     "andalucia": {
       "type": "Feature",
       "properties": { "tooltipContent": "South-East Andalucia"},
       "geometry": {
@@ -850,7 +850,7 @@
         ]
       }
     },
-    "Helsinki": {
+    "helsinki": {
       "type": "Feature",
       "properties": { "tooltipContent": "Helsinki"},
       "geometry": {
@@ -903,7 +903,7 @@
         ]
       }
     },
-    "Copenhagen": {
+    "copenhagen": {
       "type": "Feature",
       "properties": { "tooltipContent": "Copenhagen"},
       "geometry": {
@@ -954,7 +954,7 @@
         ]
       }
     },
-    "Stockholm": {
+    "stockholm": {
       "type": "Feature",
       "properties": { "tooltipContent": "Stockholm"},
       "geometry": {
@@ -1009,7 +1009,7 @@
       }
     },
 
-    "Engadin - Sankt-Moritz": {
+    "engadinSanktMoritz": {
       "type": "Feature",
       "properties": { "tooltipContent": "Engadin - Sankt-Moritz"},
       "geometry": {
