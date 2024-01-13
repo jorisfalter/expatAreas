@@ -21,11 +21,23 @@ loadGeoJSON("regions.json").then((regionsData) => {
     // Add source and layer for each region
     Object.entries(regionsData).forEach(([regionId, geojsonData]) => {
       map.addSource(regionId, { type: "geojson", data: geojsonData });
+      // Add the fill layer
       map.addLayer({
         id: `${regionId}-layer`,
         type: "fill",
         source: regionId,
         paint: { "fill-color": "#0000FF", "fill-opacity": 0.6 },
+      });
+      // Add the line layer for border
+      map.addLayer({
+        id: `${regionId}-border`,
+        type: "line",
+        source: regionId,
+        layout: {},
+        paint: {
+          "line-color": "#000000", // Black color for the border
+          "line-width": 1, // Width of the border line
+        },
       });
 
       // Add mouseenter event for each layer
