@@ -27,7 +27,7 @@
 
     "corfu": {
       "name":"Corfu",
-      "properties": {}
+      "properties": {"why": "Because James Bond was here!"}
     },
 
     "ibiza": {
