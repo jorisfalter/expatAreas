@@ -120,7 +120,7 @@
 
     "engadinSanktMoritz": {
       "name":"Engadin - Sankt Moritz",
-      "properties": {"why":"Because of the great weather, because Switzerland overall is a safe place to live with children, because it's amazing for doing outdoor adventures with your kids","weather": "300 days with sun per year!"}
+      "properties": {"pic":"sanktMoritz.avif","why":"Because of the great weather, because Switzerland overall is a safe place to live with children, because it's amazing for doing outdoor adventures with your kids","weather": "300 days with sun per year!"}
     },
 
     "empty": {

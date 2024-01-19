@@ -66,3 +66,9 @@ h3{
   pointer-events: none; 
   z-index: 10;
 }
+
+.location-banner-pic{
+  height: 40px; /* or any maximum value */
+  /* width: auto; */
+
+}
