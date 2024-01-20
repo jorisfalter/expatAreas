@@ -20,7 +20,7 @@
         <img class="location-banner-pic" src=<%=city.properties.pic %>>
 
     </div>
-    <h1>Welcome to <%= city.name %>
+    <h1>Welcome to <%= city.name %>!
     </h1>
 
     <!-- Add more city-specific content placeholders as needed -->
@@ -28,12 +28,17 @@
     </h2>
     <p><%- city.properties.why %></p>
 
-    <!-- test -->
+    <h2><i class="fa fa-question"></i> Why not?
+    </h2>
+    <p><%- city.properties.whyNot %></p>
 
 
 
     <h2><i class="fa fa-group"></i> Communities</h2>
+    <p><%- city.properties.communities %></p>
     <h2><i class="fas fa-building"></i> Schools</h2>
+    <p><%- city.properties.schools %></p>
+
     <h2><i class="fa fa-sun-o"></i> Weather</h2>
     <p><%- city.properties.weather %></p>
 

@@ -44,14 +44,14 @@
       "name":"Phuket",
       "properties": { 
         "Communities": "Homa",
-        "Schools": "UWC"
+        "schools": "UWC"
     }},
     
     "bali": {
       "name":"Bali",
       "properties": {    
-     "Notable Schools":"The Green School",
-      "Notable Communities": "Boundless Life"}
+       "schools":"The Green School",
+        "communities": "Boundless Life"}
     },
 
     "curacao": {
@@ -72,31 +72,31 @@
     "tulum": {
       "name":"Tulum",
       "properties": {    
-        "Notable Schools": "The Green School"}
+        "schools": "The Green School"}
     },
 
     "roatan": {
       "name":"Roatan",
       "properties": {    
-        "Notable Communities":"Prospera"}
+        "communities":"Prospera"}
     },
 
     "sintraCascais": {
       "name":"Sintra - Cascais",
       "properties": {     
-        "Notable Communities": "Boundless Life "}
+        "communities": "Boundless Life "}
     },
 
     "syros": {
       "name":"Syros",
       "properties": {    
-        "Notable Communities": "Boundless Life"}
+        "communities": "Boundless Life"}
     },
 
      "andalucia": {
       "name":"Andalucia",
       "properties": {    
-        "Notable Schools": "Alma Forest School"}
+        "schools": "Alma Forest School"}
     },
 
     "helsinki": {
@@ -120,9 +120,12 @@
 
     "engadinSanktMoritz": {
       "name":"Engadin - Sankt Moritz",
-      "properties": {"pic":"sanktMoritz.avif","why":"Because of the great weather, because Switzerland overall is a safe place to live with children, because it's amazing for doing outdoor adventures with your kids","weather": "300 days with sun per year!"}
+      "properties": {"pic":"sanktMoritz.avif","why":"Because of the sunny weather, because Switzerland overall is a safe place to live with children, because it's amazing for doing outdoor adventures with your kids","whyNot":"You need deep pockets!","weather": "300 days with sun per year!"}
     },
-
+    "singapore": {
+      "name":"Singapore",
+      "properties": {"whyNot":"You need deep pockets. Almost everyone lives in condos, rather than houses, which is less ideal for pets.", "schools": "UWC South-East Asia"}
+    },
     "empty": {
       "name":"",
       "properties": {}
