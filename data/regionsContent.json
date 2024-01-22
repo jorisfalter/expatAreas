@@ -22,7 +22,7 @@
 
     "crete": {
       "name":"Crete",
-      "properties": {}
+      "properties": {"why": "A relatively big island, in one of Europe's most beautiful countries, as well as the cradle of history!", "whyNot":"Apparently pretty underwhelming in healthcare and schooling."}
     },
 
     "corfu": {
