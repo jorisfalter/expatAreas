@@ -37,7 +37,7 @@
 
 
     <% if (city.properties.communities && city.properties.communities.trim().length> 0) { %>
-        <h2><i class="fas fa-group"></i> Communities</h2>
+        <h2><i class="fa fa-group"></i> Communities</h2>
         <p><%- city.properties.communities %></p>
         <% } %>
 
@@ -51,34 +51,38 @@
                         <p><%- city.properties.weather %></p>
                         <% } %>
 
+                            <% if (city.properties.popuplation && city.properties.weather.population().length> 0) { %>
+                                <h2><i class="fa fa-bar-chart"></i> Population</h2>
+                                <p><%- city.properties.population %></p>
+                                <% } %>
 
 
-                            <h2><i class="fa fa-bar-chart"></i> Population</h2>
-                            <h2><i class="fa fa-pencil-square-o"></i> Reviews</h2>
-                            <p>
 
-                                <% for(let key in city.properties.reviews) { %>
+                                    <h2><i class="fa fa-pencil-square-o"></i> Reviews</h2>
                                     <p>
-                                        <%- city.properties.reviews[key] %>
-                                    </p>
-                                    <% } %>
-                            </p>
-                            <p>Add Review</p>
 
-                            <!-- User Comments Section -->
-                            <div id="userComments">
-                                <h4>User Comments:</h4>
-                                <p id="commentsList">
-                                    Some Comment
-                                </p>
-                            </div>
-                            <!-- Comment Form -->
-                            <form id="commentForm">
-                                <label for="commentInput">Add a Comment:</label>
-                                <textarea id="commentInput" rows="4" cols="50" required></textarea>
-                                <button type="submit">Add Comment</button>
-                            </form>
-                            <button onclick="location.href='/'">Go Back Home</button>
+                                        <% for(let key in city.properties.reviews) { %>
+                                            <p>
+                                                <%- city.properties.reviews[key] %>
+                                            </p>
+                                            <% } %>
+                                    </p>
+                                    <p>Add Review</p>
+
+                                    <!-- User Comments Section -->
+                                    <div id="userComments">
+                                        <h4>User Comments:</h4>
+                                        <p id="commentsList">
+                                            Some Comment
+                                        </p>
+                                    </div>
+                                    <!-- Comment Form -->
+                                    <form id="commentForm">
+                                        <label for="commentInput">Add a Comment:</label>
+                                        <textarea id="commentInput" rows="4" cols="50" required></textarea>
+                                        <button type="submit">Add Comment</button>
+                                    </form>
+                                    <button onclick="location.href='/'">Go Back Home</button>
 </body>
 
 </html>
