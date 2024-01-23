@@ -9,6 +9,29 @@ const map = new mapboxgl.Map({
   zoom: 3,
 });
 
+map.on("moveend", function () {
+  var center = map.getCenter();
+  var zoom = map.getZoom();
+
+  // Store center latitude and longitude
+  localStorage.setItem("mapCenterLat", center.lat);
+  localStorage.setItem("mapCenterLng", center.lng);
+  localStorage.setItem("mapZoom", zoom);
+});
+
+if (
+  localStorage.getItem("mapCenterLat") &&
+  localStorage.getItem("mapCenterLng") &&
+  localStorage.getItem("mapZoom")
+) {
+  var lat = localStorage.getItem("mapCenterLat");
+  var lng = localStorage.getItem("mapCenterLng");
+  var zoom = localStorage.getItem("mapZoom");
+
+  map.setCenter([lng, lat]);
+  map.setZoom(zoom);
+}
+
 // Function to load GeoJSON data from a file
 function loadGeoJSON(url) {
   return fetch(url)

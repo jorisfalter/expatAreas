@@ -18,7 +18,8 @@ app.get("/", function (req, res) {
   res.render("index", {});
 });
 
-app.post("/", function (req, res) {});
+// I assume we don't need this
+// app.post("/", function (req, res) {});
 
 const cities = require("./data/regionsContent.json");
 // console.log("log1: " + cities["engadinSanktMoritz"]);
