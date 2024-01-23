@@ -88,7 +88,10 @@ h3{
   top: 10px;       /* Distance from the top */
   right: 10px;     /* Distance from the right */
   border: none;    /* Optional: removes the border */
-  background-color: transparent; /* Optional: makes the background transparent */
+  background-color: white; /* Optional: makes the background transparent */
   font-size: 24px; /* Adjusts the size of the 'X' */
   cursor: pointer; /* Changes cursor to pointer on hover */
+  border-color:black;
+  border-style:solid;
+  border-radius:10%;
 }
