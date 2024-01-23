@@ -106,6 +106,10 @@ loadGeoJSON("regions.json").then((regionsData) => {
 //////////////// TOP FILTERS
 // Coordinates and zoom levels for each region for the filters on top
 const locations = {
+  full: {
+    center: [10.54, 39.98],
+    zoom: 1,
+  },
   europe: {
     center: [10.54, 39.98],
     zoom: 3,
@@ -144,6 +148,10 @@ function flyToRegion(region) {
 }
 
 // Attaching event listeners using querySelector
+document.querySelector(".full-button").addEventListener("click", function () {
+  flyToRegion("full");
+});
+
 document.querySelector(".europe-button").addEventListener("click", function () {
   flyToRegion("europe");
 });

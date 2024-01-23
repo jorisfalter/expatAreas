@@ -95,7 +95,7 @@
 
      "andalucia": {
       "name":"Andalucia",
-      "properties": {    
+      "properties": {"pic":"andalucia.avif",
         "schools": "Alma Forest School"}
     },
 
