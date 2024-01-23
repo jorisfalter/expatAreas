@@ -120,7 +120,7 @@
 
     "engadinSanktMoritz": {
       "name":"Engadin - Sankt Moritz",
-      "properties": {"pic":"sanktMoritz.avif","why":"Because of the sunny weather, because Switzerland overall is a safe place to live with children, because it's amazing for doing outdoor adventures with your kids","whyNot":"You need deep pockets!","weather": "300 days with sun per year!"}
+      "properties": {"pic":"sanktMoritz.avif","why":"Because of the sunny weather, because Switzerland overall is a safe place to live with children, because it's amazing for doing outdoor adventures with your kids","whyNot":"You need deep pockets! It doesn't seem that there is a tight-knit community of tech-bros there.","weather": "300 days with sun per year!"}
     },
     "singapore": {
       "name":"Singapore",
