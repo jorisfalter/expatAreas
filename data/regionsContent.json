@@ -83,7 +83,7 @@
 
     "sintraCascais": {
       "name":"Sintra - Cascais",
-      "properties": {    "why":"Nice weather, nice beaches, nice nature, good food and a big community of foreigners. Big city nearby with international airport.", 
+      "properties": {    "pic":"sintra.avif","why":"Nice weather, nice beaches, nice nature, good food and a big community of foreigners. Big city nearby with international airport.", 
         "communities": "Boundless Life "}
     },
 
