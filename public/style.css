@@ -78,6 +78,9 @@ h3{
   max-height: 180px; /* Sets the maximum height of the image */
   object-fit: cover; /* Ensures the image covers the full container without distortion */
   display: block; /* Removes any default margin or padding */
+  border-style:solid;
+  border-color:black;
+  border-radius: 10px;
 }
 
 .city-page-body{
