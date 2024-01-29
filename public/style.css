@@ -81,6 +81,7 @@ h3{
   border-style:solid;
   border-color:black;
   border-radius: 10px;
+  border-width:1px;
 }
 
 .city-page-body{
