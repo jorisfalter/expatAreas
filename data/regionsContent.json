@@ -126,6 +126,10 @@
       "name":"Singapore",
       "properties": {"why":"Nice weather, most walkable country in south East Asia, great public transport, great connections to everywhere in the world, great parks, many playgrounds, many expat families with children, …","whyNot":"You need deep pockets. Almost everyone lives in condos, rather than houses, which is less ideal for pets. Could suffer from air pollution in Q4", "schools": "UWC South-East Asia"}
     },
+    "cyprus": {
+      "name":"Cyprus",
+      "properties": {"why": "Islands are always fun.", "whyNot": "Politically pretty complicated with the Turkish claims, I don't know how much of an impact it has on the day to day."}
+    },
     "empty": {
       "name":"",
       "properties": {}
