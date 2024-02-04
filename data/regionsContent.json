@@ -110,7 +110,7 @@
 
     "copenhagen": {
       "name":"Copenhagen",
-      "properties": {"why":"The country of Lego, need I say more?"}
+      "properties": {"why":"The country of Lego, need I say more?", "whyNot":"The weather probably."}
     },
 
     "stockholm": {
