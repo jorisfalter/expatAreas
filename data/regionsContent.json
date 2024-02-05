@@ -77,13 +77,13 @@
 
     "roatan": {
       "name":"Roatan",
-      "properties": {    
+      "properties": {    "pic":"roatan.avif","picowner":"Stephen T King - Unsplash",
         "communities":"Prospera"}
     },
 
     "sintraCascais": {
       "name":"Sintra & Cascais",
-      "properties": {    "pic":"sintra.avif","why":"Nice weather, nice beaches, nice nature, good food and a big community of foreigners. Big city nearby with international airport.", 
+      "properties": {    "pic":"sintra.avif","picowner":"Katia De Juan - Unsplash","why":"Nice weather, nice beaches, nice nature, good food and a big community of foreigners. Big city nearby with international airport.", 
         "communities": "Boundless Life "}
     },
 
