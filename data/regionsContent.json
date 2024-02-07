@@ -133,7 +133,7 @@
     },
     "empty": {
       "name":"",
-      "properties": {}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why":"...", "whyNot":"..."}
     }
   }
 
