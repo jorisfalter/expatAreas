@@ -4,6 +4,7 @@
     "algarve": {
       "name":"Algarve",
       "properties": {
+        "pic":"algarve.avif","picowner":"Tim ten Cate - Unsplash","why":"...","whyNot":"...",
         "Population":{
           "Population": "500,000 inhabitants",
           "Population in high season":""}, 
@@ -14,94 +15,94 @@
         "Number of international schools": "13"
       }
     },
-
+    
     "tenerife": {
       "name":"Tenerife",
-      "properties": {}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"..."}
     },
 
     "crete": {
       "name":"Crete",
-      "properties": {"why": "A relatively big island, in one of Europe's most beautiful countries, as well as the cradle of history!", "whyNot":"Apparently pretty underwhelming in healthcare and schooling."}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why": "A relatively big island, in one of Europe's most beautiful countries, as well as the cradle of history!", "whyNot":"Apparently pretty underwhelming in healthcare and schooling."}
     },
 
     "corfu": {
       "name":"Corfu",
-      "properties": {"why": "Because James Bond was here!"}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why": "Because James Bond was here!","whyNot":"..."}
     },
 
     "ibiza": {
       "name":"Ibiza",
-      "properties": {}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"..."}
     },
     
     "mallorca": {
       "name":"Mallorca",
-      "properties": {}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"..."}
     },
     
     "phuket": {
       "name":"Phuket",
-      "properties": { 
+      "properties": { "pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"...",
         "Communities": "Homa",
         "schools": "UWC"
     }},
     
     "bali": {
       "name":"Bali",
-      "properties": {    
+      "properties": {    "pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"...",
        "schools":"The Green School",
         "communities": "Boundless Life"}
     },
 
     "curacao": {
       "name":"Curacao",
-      "properties": {}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"..."}
     },
 
     "tortola": {
       "name":"Tortola",
-      "properties": { }
+      "properties": { "pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"..."}
     },
 
     "playaDelCarmen": {
       "name":"Playa Del Carmen",
-      "properties": {}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"..."}
     },
 
     "tulum": {
       "name":"Tulum",
-      "properties": {    
+      "properties": {    "pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"...",
         "schools": "The Green School"}
     },
 
     "roatan": {
       "name":"Roatan",
-      "properties": {    "pic":"roatan.avif","picowner":"Stephen T King - Unsplash",
+      "properties": {    "pic":"roatan.avif","picowner":"Stephen T King - Unsplash","why":"...","whyNot":"..."
         "communities":"Prospera"}
     },
 
     "sintraCascais": {
       "name":"Sintra & Cascais",
-      "properties": {    "pic":"sintra.avif","picowner":"Katia De Juan - Unsplash","why":"Nice weather, nice beaches, nice nature, good food and a big community of foreigners. Big city nearby with international airport.", 
+      "properties": {    "pic":"sintra.avif","picowner":"Katia De Juan - Unsplash","why":"Nice weather, nice beaches, nice nature, good food and a big community of foreigners. Big city nearby with international airport.", "whyNot":"...",
         "communities": "Boundless Life "}
     },
 
     "syros": {
       "name":"Syros",
-      "properties": {    
+      "properties": {    "pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"...",
         "communities": "Boundless Life"}
     },
 
      "andalucia": {
       "name":"Andalucia",
-      "properties": {"pic":"andalucia.avif","picowner":"Jorge Fernández Salas - Unsplash",
+      "properties": {"pic":"andalucia.avif","picowner":"Jorge Fernández Salas - Unsplash","why":"...","whyNot":"...",
         "schools": "Alma Forest School"}
     },
 
     "helsinki": {
       "name":"Helsinki",
-      "properties": {      
+      "properties": {      "pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"...",
         "reviews": [
           "<p>Pros: </p><p>Living in the capital city you don't need a car - a monthly bus-pass covers all the metro/tram/bus trips you need for €50 or so. </p><p>The city is also very walkable, which is particularly good for children. </p><p>If you have children they can go to daycare from 1 year old, and the cost of that is subsidized, they start school properly at age of 7 and generally take themselves there (mostly by walking, some might cycle or take a bus). </p><p>The cities are safe, the houses are expensive but not out of reach, and renting isn't so bad, most buildings have double/triple glazing and are very well insulated. </p><p>Nature is easy to reach, and readily appreciated. Children spend a couple of hours outdoors at school, even in the winters. </p><p>Also if you do get cold a sauna is a great way to warm up!</p><p>Lots of technology companies, relative to the city of the country, and English is frequently the working language. </p><p>Cons: </p><p>The winters get cold, it has been -10°C for the past week, and it will get colder soon enough. </p><p>The winters are also dark. </p><p>As a UK-native the language is complex and alien, but willingness to learn and practice is appreciated - the con is that if you struggle to order something in broken Finnish people will usually switch to English, which helps you in the short-term, but screws you over in the long term. </p><p>Alcoholism is common, and winter depression, but the alcoholism in Scotland is significantly worse so don't go expecting something crazy. </p><p><a href='https://news.ycombinator.com/item?id=38525825&'>Source</a></p>"
         ]
@@ -110,25 +111,25 @@
 
     "copenhagen": {
       "name":"Copenhagen",
-      "properties": {"why":"The country of Lego, need I say more?", "whyNot":"The weather probably."}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why":"The country of Lego, need I say more?", "whyNot":"The weather probably."}
     },
 
     "stockholm": {
       "name":"Stockholm",
-      "properties": {"why": "Stockholm gets more than 2000 hours of sunlight yearly, which is a lot for a city north of the Alps (<a target='blank' href='https://upload.wikimedia.org/wikipedia/commons/f/f8/Europe_sunshine_hours_map.png'>Source</a>)."}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why": "Stockholm gets more than 2000 hours of sunlight yearly, which is a lot for a city north of the Alps (<a target='blank' href='https://upload.wikimedia.org/wikipedia/commons/f/f8/Europe_sunshine_hours_map.png'>Source</a>).","whyNot":"..."}
     },
 
     "engadinSanktMoritz": {
       "name":"Engadin - Sankt Moritz","picowner":"Marc Siegrist - Unsplash",
-      "properties": {"pic":"sanktMoritz.avif","why":"Because of the sunny weather, because Switzerland overall is a safe place to live with children, because it's amazing for doing outdoor adventures with your kids","whyNot":"You need deep pockets! It doesn't seem that there is a tight-knit community of tech-bros there.","weather": "300 days with sun per year!"}
+      "properties": {"pic":"sanktMoritz.avif","picowner":"...","why":"Because of the sunny weather, because Switzerland overall is a safe place to live with children, because it's amazing for doing outdoor adventures with your kids","whyNot":"You need deep pockets! It doesn't seem that there is a tight-knit community of tech-bros there.","weather": "300 days with sun per year!"}
     },
     "singapore": {
       "name":"Singapore",
-      "properties": {"why":"Nice weather, most walkable country in south East Asia, great public transport, great connections to everywhere in the world, great parks, many playgrounds, many expat families with children, …","whyNot":"You need deep pockets. Almost everyone lives in condos, rather than houses, which is less ideal for pets. Could suffer from air pollution in Q4", "schools": "UWC South-East Asia"}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why":"Nice weather, most walkable country in south East Asia, great public transport, great connections to everywhere in the world, great parks, many playgrounds, many expat families with children, …","whyNot":"You need deep pockets. Almost everyone lives in condos, rather than houses, which is less ideal for pets. Could suffer from air pollution in Q4", "schools": "UWC South-East Asia"}
     },
     "cyprus": {
       "name":"Cyprus",
-      "properties": {"why": "Islands are always fun.", "whyNot": "Politically pretty complicated with the Turkish claims, I don't know how much of an impact it has on the day to day."}
+      "properties": {"pic":"....avif","picowner":"... - Unsplash","why": "Islands are always fun.", "whyNot": "Politically pretty complicated with the Turkish claims, I don't know how much of an impact it has on the day to day."}
     },
     "empty": {
       "name":"",
