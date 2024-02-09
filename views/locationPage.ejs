@@ -12,12 +12,13 @@
 </head>
 
 <body class="city-page-body">
-    <button onclick="location.href='/'" id="closeButton">&times;</button>
 
     <div class="location-banner">
-        <!-- need to add a city pic here -->
-        <!-- maybe from unsplash api?-->
+        <button onclick="location.href='/'" id="closeButton">&times;</button>
+
         <img class="location-banner-pic" src=<%=city.properties.pic %>>
+        <div class="photographer-name">Photographer's Name</div>
+
 
     </div>
     <h1>Welcome to <%= city.name %>!

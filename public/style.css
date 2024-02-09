@@ -91,6 +91,14 @@ h3{
   background-color: #FFE6E6;
 }
 
+.location-banner {
+  position: relative;
+  width: 100%; /* Adjust based on your layout */
+  max-height: 180px; /* Match your image's max height */
+  border-radius: 10px; /* Match your image's border-radius */
+  overflow: hidden; /* Ensures nothing spills outside the container's rounded corners */
+}
+
 #closeButton {
   position: absolute; /* Fix position relative to the viewport */
   top: 10px;       /* Distance from the top */
@@ -102,6 +110,18 @@ h3{
   border-color:black;
   border-style:solid;
   border-radius:10%;
+}
+
+.photographer-name {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+  color: black; /* Text color */
+  font-size: 12px; /* Small font size */
+  padding: 2px 5px; /* Padding around the text */
+  margin: 4px; /* Margin from the bottom right corner */
+  border-radius: 5px; /* Optional: rounded corners for the text background */
 }
 
 .returnButton{
