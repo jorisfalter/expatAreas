@@ -117,7 +117,7 @@ h3{
   bottom: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
-  color: black; /* Text color */
+  color: gray; /* Text color */
   font-size: 12px; /* Small font size */
   padding: 2px 5px; /* Padding around the text */
   margin: 4px; /* Margin from the bottom right corner */
