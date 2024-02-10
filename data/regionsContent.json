@@ -23,7 +23,7 @@
 
     "crete": {
       "name":"Crete",
-      "properties": {"pic":"....avif","picowner":"... - Unsplash","why": "A relatively big island, in one of Europe's most beautiful countries, as well as the cradle of history!", "whyNot":"Apparently pretty underwhelming in healthcare and schooling."}
+      "properties": {"pic":"crete.avif","picowner":"Elena Dimaki - Unsplash","why": "A relatively big island, in one of Europe's most beautiful countries, as well as the cradle of history!", "whyNot":"Apparently pretty underwhelming in healthcare and schooling."}
     },
 
     "corfu": {
