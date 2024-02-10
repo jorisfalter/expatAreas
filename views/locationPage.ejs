@@ -17,7 +17,9 @@
         <button onclick="location.href='/'" id="closeButton">&times;</button>
 
         <img class="location-banner-pic" src=<%=city.properties.pic %>>
-        <div class="photographer-name">Photographer's Name</div>
+        <div class="photographer-name">
+            <%= city.properties.picowner %>
+        </div>
 
 
     </div>
