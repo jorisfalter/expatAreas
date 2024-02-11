@@ -54,22 +54,28 @@
                         <p><%- city.properties.weather %></p>
                         <% } %>
 
-                            <% if (city.properties.popuplation && city.properties.weather.population().length> 0) { %>
+                            <% if (city.properties.population && city.properties.population.trim().length> 0) { %>
                                 <h2><i class="fa fa-bar-chart"></i> Population</h2>
                                 <p><%- city.properties.population %></p>
                                 <% } %>
 
 
 
-                                    <h2><i class="fa fa-pencil-square-o"></i> Reviews</h2>
+                                    <h2><i class="fa fa-pencil-square-o"></i> What People Say</h2>
                                     <p>
 
+                                        <% if (city.properties.reviews && city.properties.reviews.length> 0) { %>
 
-                                        <% for(let key in city.properties.reviews) { %>
-                                            <p>
-                                                <%- city.properties.reviews[key] %>
-                                            </p>
-                                            <% } %>
+
+                                            <% for(let key in city.properties.reviews) { %>
+                                                <p>
+                                                    <%- city.properties.reviews[key] %>
+                                                </p>
+                                                <% } %>
+                                                    <% } else { %>
+                                                        <p>Nothing said yet ...</p>
+                                                        <% } %>
+
                                     </p>
 
                                     <!-- User Comments Section -->
@@ -79,7 +85,7 @@
                                     </div>
                                     <!-- Comment Form -->
 
-                                    <p>Add Review</p>
+                                    <h4>Add Your Voice:</h4>
 
                                     <form id="commentForm">
                                         <!-- <label for="commentInput">Add a Comment:</label> -->
