@@ -111,7 +111,7 @@
 
     "copenhagen": {
       "name":"Copenhagen",
-      "properties": {"pic":"....avif","picowner":"... - Unsplash","why":"The country of Lego, need I say more?", "whyNot":"The weather probably."}
+      "properties": {"pic":"copenhagen.avif","picowner":"Rolands Varsbergs - Unsplash","why":"The country of Lego, need I say more?", "whyNot":"The weather probably."}
     },
 
     "stockholm": {
