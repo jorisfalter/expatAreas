@@ -43,14 +43,14 @@
     
     "phuket": {
       "name":"Phuket",
-      "properties": { "pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"...",
+      "properties": { "pic":"phuket.avif","picowner":"Bradley Prentice - Unsplash","why":"...","whyNot":"...",
         "Communities": "Homa",
         "schools": "UWC"
     }},
     
     "bali": {
       "name":"Bali",
-      "properties": {    "pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"...",
+      "properties": {    "pic":"bali.avif","picowner":"Niklas Weiss - Unsplash","why":"...","whyNot":"...",
        "schools":"The Green School",
         "communities": "Boundless Life"}
     },
