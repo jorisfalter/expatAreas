@@ -28,7 +28,7 @@
 
     "corfu": {
       "name":"Corfu",
-      "properties": {"pic":"corfu.avif","picowner":"Calin Stan - Unsplash","why": "Because James Bond was here!","whyNot":"..."}
+      "properties": {"pic":"corfu.avif","picowner":"Calin Stan - Unsplash","why": "Because James Bond was here!","whyNot":"Uncertain about schools and healthcare"}
     },
 
     "ibiza": {
@@ -38,7 +38,7 @@
     
     "mallorca": {
       "name":"Mallorca",
-      "properties": {"pic":"mallorca.avif","picowner":"redcharlie - Unsplash","why":"...","whyNot":"..."}
+      "properties": {"pic":"mallorca.avif","picowner":"Redcharlie - Unsplash","why":"Bigger than it's neighbour Ibiza","whyNot":"..."}
     },
     
     "phuket": {
