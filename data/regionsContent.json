@@ -28,12 +28,12 @@
 
     "corfu": {
       "name":"Corfu",
-      "properties": {"pic":"....avif","picowner":"... - Unsplash","why": "Because James Bond was here!","whyNot":"..."}
+      "properties": {"pic":"corfu.avif","picowner":"Calin Stan - Unsplash","why": "Because James Bond was here!","whyNot":"..."}
     },
 
     "ibiza": {
       "name":"Ibiza",
-      "properties": {"pic":"....avif","picowner":"... - Unsplash","why":"...","whyNot":"..."}
+      "properties": {"pic":"Ibiza.avif","picowner":"Monique - Unsplash","why":"...","whyNot":"..."}
     },
     
     "mallorca": {
