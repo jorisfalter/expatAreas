@@ -6,8 +6,8 @@
     "properties": {
       "pic": "algarve.avif",
       "picowner": "Tim ten Cate - Unsplash",
-      "why": "...",
-      "whyNot": "...",
+      "why": "A more relax destination compared to the Lisbon area.",
+      "whyNot": "Gets very busy in summer with tourism. Might be more of a retiree destination",
       "Population": {
         "Population": "500,000 inhabitants"
       },
@@ -120,7 +120,7 @@
       "pic": "playaDelCarmen.avif",
       "picowner": "Conor Luddy - Unsplash",
       "why": "...",
-      "whyNot": "..."
+      "whyNot": "Too many tourists and retirees, rather than hipster remote workers."
     }
   },
 
