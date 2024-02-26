@@ -56,7 +56,8 @@
       "pic": "Ibiza.avif",
       "picowner": "Monique - Unsplash",
       "why": "Has everything the global traveller wants, given the very international audience visiting this island.",
-      "whyNot": "Pricey in high season. Not a well known destination for remote workers. Rather for partying."
+      "whyNot": "Pricey in high season. Not a well known destination for remote workers, rather for partying.",
+      "schools": "The Learning Project"
     }
   },
 
@@ -77,7 +78,7 @@
       "picowner": "Bradley Prentice - Unsplash",
       "why": "Beautiful beaches, great weather all year around. Lower cost of living, pretty decent infrastracture to live as a family. Good international schools.",
       "whyNot": "It's getting slightly overcrowded",
-      "Communities": "Homa",
+      "communities": "Homa",
       "schools": "UWC"
     }
   },
