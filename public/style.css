@@ -105,6 +105,11 @@ h3{
     height: 400px; /* or you can use percentages, like 60vh */
     margin:auto;
   }
+
+  .airlineFilter{
+    width: 95%;
+    margin:auto;
+  }
 }
 
 .location-banner {
