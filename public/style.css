@@ -91,6 +91,16 @@ h3{
   background-color: #FFE6E6;
 }
 
+/* mobile only */
+@media screen and (max-width: 768px) {
+  .city-page-body{
+    margin-left:5%;
+    margin-right: 5%;
+    position:relative;
+    background-color: #FFE6E6;
+  }
+}
+
 .location-banner {
   position: relative;
   width: 100%; /* Adjust based on your layout */
