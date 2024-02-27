@@ -99,6 +99,12 @@ h3{
     position:relative;
     background-color: #FFE6E6;
   }
+
+  #map {
+    width: 95%;
+    height: 400px; /* or you can use percentages, like 60vh */
+    margin:auto;
+  }
 }
 
 .location-banner {
