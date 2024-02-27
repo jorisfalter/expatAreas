@@ -110,6 +110,20 @@ h3{
     width: 95%;
     margin:auto;
   }
+
+  .image-container{
+    /* height: 40px;
+    overflow:hidden; */
+    width: 100px;
+  }
+
+  .airline{
+    width:100px;
+  }
+
+  .overlay-text{
+    font-size:10px;
+  }
 }
 
 .location-banner {
