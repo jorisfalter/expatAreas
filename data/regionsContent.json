@@ -154,7 +154,8 @@
       "picowner": "Katia De Juan - Unsplash",
       "why": "Nice weather, nice beaches, nice nature, good food and a big community of foreigners. Big city nearby with international airport.",
       "whyNot": "Getting very popular which raises prices. Part of the Lisbon suburbs which brings city problems (traffic, criminality, ...)",
-      "communities": "Boundless Life "
+      "communities": "Boundless Life ",
+      "schools": "International Sharing School"
     }
   },
 
@@ -249,6 +250,33 @@
       "pic": "....avif",
       "picowner": "... - Unsplash",
       "why": "A car-free village (<a target='blank' href='https://twitter.com/devonzuegel/status/1762537124308394198'>source</a>)",
+      "whyNot": "..."
+    }
+  },
+  "paros": {
+    "name": "Paros",
+    "properties": {
+      "pic": "....avif",
+      "picowner": "... - Unsplash",
+      "why": "Growing community of expats",
+      "whyNot": "..."
+    }
+  },
+  "mykonos": {
+    "name": "Mykonos",
+    "properties": {
+      "pic": "....avif",
+      "picowner": "... - Unsplash",
+      "why": "High standard of living",
+      "whyNot": "..."
+    }
+  },
+  "rhodes": {
+    "name": "Rhodes",
+    "properties": {
+      "pic": "....avif",
+      "picowner": "... - Unsplash",
+      "why": "Active expat community",
       "whyNot": "..."
     }
   },
