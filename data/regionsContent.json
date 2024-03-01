@@ -243,6 +243,15 @@
       "whyNot": "Politically pretty complicated with the Turkish claims, I don't know how much of an impact it has on the day to day."
     }
   },
+  "lasCatalinas": {
+    "name": "Las Catalinas",
+    "properties": {
+      "pic": "....avif",
+      "picowner": "... - Unsplash",
+      "why": "A car-free village",
+      "whyNot": "..."
+    }
+  },
   "empty": {
     "name": "",
     "properties": {
