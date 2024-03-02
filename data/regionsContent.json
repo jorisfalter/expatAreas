@@ -265,8 +265,8 @@
   "mykonos": {
     "name": "Mykonos",
     "properties": {
-      "pic": "....avif",
-      "picowner": "... - Unsplash",
+      "pic": "mykonos.avif",
+      "picowner": "Jeet Dhanoa - Unsplash",
       "why": "High standard of living",
       "whyNot": "..."
     }
@@ -274,8 +274,8 @@
   "rhodes": {
     "name": "Rhodes",
     "properties": {
-      "pic": "....avif",
-      "picowner": "... - Unsplash",
+      "pic": "rhodes.avif",
+      "picowner": "Serhat Beyazkaya - Unsplash",
       "why": "Active expat community",
       "whyNot": "..."
     }
