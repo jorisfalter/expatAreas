@@ -7,7 +7,7 @@
       "pic": "algarve.avif",
       "picowner": "Tim ten Cate - Unsplash",
       "why": "A more relax destination compared to the Lisbon area.",
-      "whyNot": "Gets very busy in summer with tourism. Might be more of a retiree destination",
+      "whyNot": "Gets very busy in summer with tourism. Might be more of a retiree destination.",
       "Population": {
         "Population": "500,000 inhabitants"
       },
@@ -46,7 +46,7 @@
       "pic": "corfu.avif",
       "picowner": "Calin Stan - Unsplash",
       "why": "Because James Bond was here! Pretty big expat community.",
-      "whyNot": "Uncertain about schools and healthcare"
+      "whyNot": "Uncertain about schools and healthcare."
     }
   },
 
@@ -77,7 +77,7 @@
       "pic": "phuket.avif",
       "picowner": "Bradley Prentice - Unsplash",
       "why": "Beautiful beaches, great weather all year around. Lower cost of living, pretty decent infrastracture to live as a family. Good international schools.",
-      "whyNot": "It's getting slightly overcrowded",
+      "whyNot": "It's getting slightly overcrowded.",
       "communities": "Homa",
       "schools": "UWC"
     }
@@ -100,8 +100,8 @@
     "properties": {
       "pic": "curacao.avif",
       "picowner": "Lucas Swennen - Unsplash",
-      "why": "Caribean with a Dutch vibe",
-      "whyNot": "High criminality, pretty remote as it lies in front of Venezuela"
+      "why": "Caribean with a Dutch vib.",
+      "whyNot": "High criminality, pretty remote as it lies in front of Venezuela."
     }
   },
 
@@ -111,7 +111,7 @@
       "pic": "tortola.avif",
       "picowner": "Dietmar Lichota - Unsplash",
       "why": "...",
-      "whyNot": "Probably a lot of retirees rather than vibrant, young families with children. But that's only an opinion"
+      "whyNot": "Probably a lot of retirees rather than vibrant, young families with children. But that's only an opinion."
     }
   },
 
@@ -153,7 +153,7 @@
       "pic": "sintra.avif",
       "picowner": "Katia De Juan - Unsplash",
       "why": "Nice weather, nice beaches, nice nature, good food and a big community of foreigners. Big city nearby with international airport.",
-      "whyNot": "Getting very popular which raises prices. Part of the Lisbon suburbs which brings city problems (traffic, criminality, ...)",
+      "whyNot": "Getting very popular which raises prices. Part of the Lisbon suburbs which brings city problems (traffic, criminality, ...).",
       "communities": "Boundless Life ",
       "schools": "International Sharing School"
     }
