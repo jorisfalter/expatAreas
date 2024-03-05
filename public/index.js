@@ -41,6 +41,7 @@ function loadGeoJSON(url) {
 }
 
 loadGeoJSON("regions.json").then((regionsData) => {
+  console.log("we're gonna wait until map is loaded now");
   map.on("load", function () {
     console.log("we're in the on load function");
     // Add source and layer for each region
