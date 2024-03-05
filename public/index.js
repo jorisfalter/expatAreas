@@ -40,70 +40,73 @@ function loadGeoJSON(url) {
     .catch((error) => console.log("Error loading the GeoJSON data:", error));
 }
 
-loadGeoJSON("regions.json").then((regionsData) => {
-  console.log("we're gonna wait until map is loaded now");
-  map.on("load", function () {
-    console.log("we're in the on load function");
-    // Add source and layer for each region
-    Object.entries(regionsData).forEach(([regionId, geojsonData]) => {
-      map.addSource(regionId, { type: "geojson", data: geojsonData });
-      // Add the fill layer
-      map.addLayer({
-        id: `${regionId}-layer`,
-        type: "fill",
-        source: regionId,
-        paint: { "fill-color": "#0000FF", "fill-opacity": 0.6 },
-      });
-      // Add the line layer for border
-      map.addLayer({
-        id: `${regionId}-border`,
-        type: "line",
-        source: regionId,
-        layout: {},
-        paint: {
-          "line-color": "#000000", // Black color for the border
-          "line-width": 1, // Width of the border line
-        },
-      });
+// function to add layers
+function addLayersToMap(regionsData) {
+  console.log("we're in the on load function");
+  // Add source and layer for each region
+  Object.entries(regionsData).forEach(([regionId, geojsonData]) => {
+    map.addSource(regionId, { type: "geojson", data: geojsonData });
+    // Add the fill layer
+    map.addLayer({
+      id: `${regionId}-layer`,
+      type: "fill",
+      source: regionId,
+      paint: { "fill-color": "#0000FF", "fill-opacity": 0.6 },
+    });
+    // Add the line layer for border
+    map.addLayer({
+      id: `${regionId}-border`,
+      type: "line",
+      source: regionId,
+      layout: {},
+      paint: {
+        "line-color": "#000000", // Black color for the border
+        "line-width": 1, // Width of the border line
+      },
+    });
 
-      // Add click event listener for the layer
-      map.on("click", `${regionId}-layer`, function () {
-        // Redirect to the URL
-        window.location.href = `/${regionId}`;
-      });
+    // Add click event listener for the layer
+    map.on("click", `${regionId}-layer`, function () {
+      // Redirect to the URL
+      window.location.href = `/${regionId}`;
+    });
 
-      // Change the cursor to a pointer when the mouse is over the layer.
-      map.on("mouseenter", `${regionId}-layer`, function () {
-        map.getCanvas().style.cursor = "pointer";
-      });
+    // Change the cursor to a pointer when the mouse is over the layer.
+    map.on("mouseenter", `${regionId}-layer`, function () {
+      map.getCanvas().style.cursor = "pointer";
+    });
 
-      // Change it back to a pointer when it leaves.
-      map.on("mouseleave", `${regionId}-layer`, function () {
-        map.getCanvas().style.cursor = "";
-      });
+    // Change it back to a pointer when it leaves.
+    map.on("mouseleave", `${regionId}-layer`, function () {
+      map.getCanvas().style.cursor = "";
+    });
 
-      // Add mouseenter event for each layer
-      map.on("mouseenter", `${regionId}-layer`, function (e) {
-        map.getCanvas().style.cursor = "pointer";
-        var tooltip = document.getElementById("tooltip");
-        var tooltipContent = document.getElementById("regionDescription");
-        tooltipContent.innerHTML = e.features[0].properties.tooltipContent;
-        tooltip.style.display = "block";
-        // Get the mouse pointer's coordinates on the page
-        var mouseX = e.originalEvent.clientX;
-        var mouseY = e.originalEvent.clientY;
-        tooltip.style.left = mouseX + "px";
-        tooltip.style.top = mouseY + "px";
-      });
+    // Add mouseenter event for each layer
+    map.on("mouseenter", `${regionId}-layer`, function (e) {
+      map.getCanvas().style.cursor = "pointer";
+      var tooltip = document.getElementById("tooltip");
+      var tooltipContent = document.getElementById("regionDescription");
+      tooltipContent.innerHTML = e.features[0].properties.tooltipContent;
+      tooltip.style.display = "block";
+      // Get the mouse pointer's coordinates on the page
+      var mouseX = e.originalEvent.clientX;
+      var mouseY = e.originalEvent.clientY;
+      tooltip.style.left = mouseX + "px";
+      tooltip.style.top = mouseY + "px";
+    });
 
-      // Add mouseleave event for each layer
-      map.on("mouseleave", `${regionId}-layer`, function () {
-        map.getCanvas().style.cursor = "";
-        var tooltip = document.getElementById("tooltip");
-        tooltip.style.display = "none";
-      });
+    // Add mouseleave event for each layer
+    map.on("mouseleave", `${regionId}-layer`, function () {
+      map.getCanvas().style.cursor = "";
+      var tooltip = document.getElementById("tooltip");
+      tooltip.style.display = "none";
     });
   });
+}
+
+loadGeoJSON("regions.json").then((regionsData) => {
+  console.log("we're gonna wait until map is loaded now");
+  map.on("load", addLayersToMap(regionsData));
 });
 
 //////////////// TOP FILTERS
