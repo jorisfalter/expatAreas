@@ -106,7 +106,12 @@ function addLayersToMap(regionsData) {
 
 loadGeoJSON("regions.json").then((regionsData) => {
   console.log("we're gonna wait until map is loaded now");
-  map.on("load", addLayersToMap(regionsData));
+  if (map.loaded()) {
+    // map already loaded
+    addLayersToMap(regionsData);
+  } else {
+    map.on("load", addLayersToMap(regionsData));
+  }
 });
 
 //////////////// TOP FILTERS
