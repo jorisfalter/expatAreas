@@ -34,6 +34,7 @@ if (
 
 // Function to load GeoJSON data from a file
 function loadGeoJSON(url) {
+  console.log("we're in the loadGeoJson function");
   return fetch(url)
     .then((response) => response.json())
     .catch((error) => console.log("Error loading the GeoJSON data:", error));
@@ -41,6 +42,7 @@ function loadGeoJSON(url) {
 
 loadGeoJSON("regions.json").then((regionsData) => {
   map.on("load", function () {
+    console.log("we're in the on load function");
     // Add source and layer for each region
     Object.entries(regionsData).forEach(([regionId, geojsonData]) => {
       map.addSource(regionId, { type: "geojson", data: geojsonData });
