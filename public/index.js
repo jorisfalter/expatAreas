@@ -42,10 +42,12 @@ function loadGeoJSON(url) {
 
 // function to add layers
 function addLayersToMap(regionsData) {
-  console.log("we're in the on load function");
+  console.log("we're in the 'on load' function");
   // Add source and layer for each region
   Object.entries(regionsData).forEach(([regionId, geojsonData]) => {
-    map.addSource(regionId, { type: "geojson", data: geojsonData });
+    if (!map.getSource(regionId)) {
+      map.addSource(regionId, { type: "geojson", data: geojsonData });
+    }
     // Add the fill layer
     map.addLayer({
       id: `${regionId}-layer`,
@@ -110,7 +112,9 @@ loadGeoJSON("regions.json").then((regionsData) => {
     // map already loaded
     addLayersToMap(regionsData);
   } else {
-    map.on("load", addLayersToMap(regionsData));
+    map.on("load", function () {
+      addLayersToMap(regionsData);
+    });
   }
 });
 
