@@ -61,11 +61,17 @@
                                 <p><%- city.properties.population %></p>
                                 <% } %>
 
+                                    <% if (city.properties.usefulLinks && city.properties.usefulLinks.trim().length> 0)
+                                        { %>
+                                        <h2><i class="fa fa-link"></i> Useful links</h2>
+                                        <p><%- city.properties.usefulLinks %></p>
+                                        <% } %>
 
 
-                                    <!-- <h2><i class="fa fa-pencil-square-o"></i> What People Say:</h2> -->
 
-                                    <!-- <p>
+                                            <!-- <h2><i class="fa fa-pencil-square-o"></i> What People Say:</h2> -->
+
+                                            <!-- <p>
 
                                         <% if (city.properties.reviews && city.properties.reviews.length> 0) { %>
 
@@ -81,22 +87,23 @@
 
                                     </p> -->
 
-                                    <!-- User Comments Section -->
-                                    <!-- <div id="userComments"></div> -->
+                                            <!-- User Comments Section -->
+                                            <!-- <div id="userComments"></div> -->
 
-                                    <!-- Comment Form -->
+                                            <!-- Comment Form -->
 
-                                    <!-- <h4>Add Your Voice:</h4> -->
+                                            <!-- <h4>Add Your Voice:</h4> -->
 
-                                    <!-- <form id="commentForm">
+                                            <!-- <form id="commentForm">
                                         <textarea id="commentInput" rows="4" cols="50" required></textarea>
                                         <button type="submit">Add Review</button>
                                     </form> -->
 
-                                    <div class="returnButton">
-                                        <button class="plane-button" onclick="location.href='/'">&#9992 Fly Back To
-                                            Homepage</button>
-                                    </div>
+                                            <div class="returnButton">
+                                                <button class="plane-button" onclick="location.href='/'">&#9992 Fly Back
+                                                    To
+                                                    Homepage</button>
+                                            </div>
 </body>
 
 </html>
