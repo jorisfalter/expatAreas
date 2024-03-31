@@ -8,6 +8,7 @@
       "picowner": "Tim ten Cate - Unsplash",
       "why": "A more relax destination compared to the Lisbon area.",
       "whyNot": "Gets very busy in summer with tourism. Might be more of a retiree destination.",
+      "walkability": "Poor, mostly car",
       "Population": {
         "Population": "500,000 inhabitants"
       },
@@ -26,7 +27,8 @@
       "pic": "tenerife.avif",
       "picowner": "Maria Bobrova - Unsplash",
       "why": "Good weather, a nature lover's dream as it has both beaches and mountains.",
-      "whyNot": "Kinda remote if you want to do weekend trips, only Morocco is really close by."
+      "whyNot": "Kinda remote if you want to do weekend trips, only Morocco is really close by.",
+      "walkability": "Poor, mostly car"
     }
   },
 
@@ -36,7 +38,8 @@
       "pic": "crete.avif",
       "picowner": "Elena Dimaki - Unsplash",
       "why": "A relatively big island, in one of Europe's most beautiful countries, as well as the cradle of history! The island has a well-established expat community, particularly in areas like Chania and Rethymno.",
-      "whyNot": "Apparently pretty underwhelming in healthcare and schooling. People drive like maniacs."
+      "whyNot": "Apparently pretty underwhelming in healthcare and schooling. ",
+      "walkability": "Poor, mostly car. People drive like maniacs."
     }
   },
 
@@ -79,6 +82,7 @@
       "picowner": "Bradley Prentice - Unsplash",
       "why": "Beautiful beaches, great weather all year around. Lower cost of living, pretty decent infrastracture to live as a family. Good international schools.",
       "whyNot": "It's getting slightly overcrowded.",
+      "walkability": "Extremely poor car-centric, almost no public transport. Dangerous roads.",
       "communities": "Homa",
       "schools": "UWC"
     }
@@ -189,6 +193,7 @@
       "picowner": "Tapio Haaja - Unsplash",
       "why": "Great education, low criminality, progressive administration. Apparently the happiest city in the world.",
       "whyNot": "The language is not like any other European langauge.",
+      "walkability": "Very safe and good public transport system.",
       "reviews": [
         "<p>Pros: </p><p>Living in the capital city you don't need a car - a monthly bus-pass covers all the metro/tram/bus trips you need for €50 or so. </p><p>The city is also very walkable, which is particularly good for children. </p><p>If you have children they can go to daycare from 1 year old, and the cost of that is subsidized, they start school properly at age of 7 and generally take themselves there (mostly by walking, some might cycle or take a bus). </p><p>The cities are safe, the houses are expensive but not out of reach, and renting isn't so bad, most buildings have double/triple glazing and are very well insulated. </p><p>Nature is easy to reach, and readily appreciated. Children spend a couple of hours outdoors at school, even in the winters. </p><p>Also if you do get cold a sauna is a great way to warm up!</p><p>Lots of technology companies, relative to the city of the country, and English is frequently the working language. </p><p>Cons: </p><p>The winters get cold, it has been -10°C for the past week, and it will get colder soon enough. </p><p>The winters are also dark. </p><p>As a UK-native the language is complex and alien, but willingness to learn and practice is appreciated - the con is that if you struggle to order something in broken Finnish people will usually switch to English, which helps you in the short-term, but screws you over in the long term. </p><p>Alcoholism is common, and winter depression, but the alcoholism in Scotland is significantly worse so don't go expecting something crazy. </p><p><a href='https://news.ycombinator.com/item?id=38525825&'>Source</a></p>"
       ]
