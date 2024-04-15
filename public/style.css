@@ -9,8 +9,15 @@ body {
   margin:auto;
 }
 
+h1{
+  text-align:center;
+}
+
 h2{
   font-size:1.2em;
+  color:blue;
+  padding-bottom:10px;
+  text-align:center;
 }
 
 h3{
@@ -23,6 +30,7 @@ h3{
 .airlineFilter{
   width: 80%;
   margin:auto;
+  text-align:center;
 }
 
 .airline {
