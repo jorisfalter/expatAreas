@@ -1,6 +1,6 @@
 # Expat areas app
 
-Find cool places to live as a remote worker with children
+Find dream places to live as a remote worker with children
 
 ## Tech Used
 
