@@ -75,7 +75,9 @@ for post in posts:
         #     print("Post Text:", text_content)
 
         # Look for the "View more answers" button within each post
-        view_more_answers_buttons = post.find_elements(By.XPATH, ".//div[@role='button'][contains(@class, 'x193iq5w xeuugli')]")
+        # view_more_answers_buttons = post.find_elements(By.XPATH, ".//div[@role='button'][contains(@class, 'x193iq5w xeuugli')]")
+        view_more_answers_buttons = post.find_elements(By.XPATH, ".//div[@role='button']")
+
         print(view_more_answers_buttons)
 
 
