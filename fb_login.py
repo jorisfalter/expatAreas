@@ -55,9 +55,6 @@ while True:
 posts = driver.find_elements(By.CSS_SELECTOR, "div[class*='xdj266r x11i5rnm xat24cr x1mh8g0r x1vvkbs']")
 print(f"Found {len(posts)} posts")  # Debugging output
 
-
-
-
 for post in posts:
     try:
          # Debugging output to check progress
@@ -78,72 +75,55 @@ for post in posts:
         # view_more_answers_buttons = post.find_elements(By.XPATH, ".//div[@role='button'][contains(@class, 'x193iq5w xeuugli')]")
         view_more_answers_buttons = post.find_elements(By.XPATH, ".//div[@role='button']")
 
-        print(view_more_answers_buttons)
-
-
         # Check if the button exists
         if view_more_answers_buttons:
-            print("We're in the view more answers")
+            print("We found a view more answers button")
             # If the button exists, click it
             view_more_answers_button = view_more_answers_buttons[0]  # Assuming there is only one such button per post
             if view_more_answers_button.is_displayed() and view_more_answers_button.is_enabled():
+                print("We're going to click view more answers")
                 view_more_answers_button.click()
                 # Wait for the additional answers to load, if necessary
-                time.sleep(5)  # This is a naive wait; consider using WebDriverWait to wait for a specific condition
+                # Assume you've navigated to and opened the modal
+                # Wait for the modal to be visible
+                print("We're going to check the modal")
+                modal = WebDriverWait(driver, 20).until(
+                    EC.visibility_of_element_located((By.XPATH, "//div[@role='dialog']"))
+                )
+                print(modal)
+                # Find all comments within the modal
+                # Adjust the selector based on actual structure
+                comments = modal.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
+                print(f"Found {len(comments)} comments")  # Debugging output
+                for post_text_element in comments:
+                    text_content = post_text_element.text
+                    print("Modal Comment Text:", text_content)
+
+
+                # # Extract text from each post
+                # post_texts = post.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
+         
+                print("finished the view more answers")
 
         # Extract text from each post
-        post_texts = post.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
-        for post_text_element in post_texts:
-            text_content = post_text_element.text
-            print("Post Text:", text_content)
+        else:
+            post_texts = post.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
+            for post_text_element in post_texts:
+                
+                # for debugging
+                inner_html = post_text_element.get_attribute('innerHTML')
+                print("InnerHTML:", inner_html)
 
-
-        # # Look for the "View more answers" link within each post
-        # # Wait for the clickable button to be visible and clickable
-        # view_more_answers_button = WebDriverWait(driver, 20).until(
-        #     EC.element_to_be_clickable((By.XPATH, "//div[@role='button'][contains(@class, 'x193iq5w xeuugli')]"))
-        # )
-
-        # # Click the button to view more answers
-        # view_more_answers_button.click()
-        # # Wait for the additional answers to load, if necessary
-        # time.sleep(5)  # This is a naive wait; it's better to use WebDriverWait
-        # post_texts = post.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
-        # for post_text_element in post_texts:
-        #     text_content = post_text_element.text
-        #     print("Post Text:", text_content)
-
+                text_content = post_text_element.text
+                print("Post Text:", text_content)
 
         # ik moet de modal terug sluiten, ik moet zorgen dat ie geen andere posts gaat lezen buiten de modal
         # ik moet een oplossing hebben als er geen view more answers button is
 
-        # view_more_links = post.find_elements(By.PARTIAL_LINK_TEXT, "View more answers")
-        # print(view_more_links)
-        # for link in view_more_links:
-        #     # Check if the link is visible and clickable before clicking
-        #     if link.is_displayed() and link.is_enabled():
-        #         link.click()
-        #         print("opened view more answers")
 
-               
-        #     else:
-        #         post_texts = post.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
-        #         for post_text_element in post_texts:
-        #             text_content = post_text_element.text
-        #             print("Post Text:", text_content)
-                
 
         print("End of post")
-        # # Find and click the comments link to load comments, if not already loaded
-        # comments_link = post.find_element(By.XPATH, ".//span[contains(text(),'Comments') or contains(text(),'Comment')]")
-        # comments_link.click()
-        # time.sleep(1)  # Allow comments to load
 
-        # # Extract and print comment details
-        # comments = post.find_elements(By.XPATH, ".//div[contains(@class, 'tw6a2znq sj5x9vvc d1544ag0 cxgpxx05')]")
-        # for comment in comments:
-        #     comment_text = comment.text
-        #     print("Comment:", comment_text)
     except Exception as e:
         # print("Error extracting post/comment:", str(e))
         print("Error extracting post/comment:")
