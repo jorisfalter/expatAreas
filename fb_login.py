@@ -46,10 +46,10 @@ while True:
     new_height = driver.execute_script("return document.body.scrollHeight")
     print("new screen height: ",new_height)
     # if new_height == last_height:
-    if counter == 2:
+    if counter == 20:
         break  # Break the loop if no new posts were loaded
     last_height = new_height
-    counter = 2 # for debugging
+    counter += 1
 
 # Extract and print post details
 # posts = driver.find_elements(By.CSS_SELECTOR, "div[class*='xdj266r x11i5rnm xat24cr x1mh8g0r x1vvkbs']")
@@ -63,52 +63,52 @@ for post in posts:
          # Debugging output to check progress
         print("We started on a new post")
 
-        # Look for the "View more answers" button within each post
-        # view_more_answers_buttons = post.find_elements(By.XPATH, ".//div[@role='button'][contains(@class, 'x193iq5w xeuugli')]")
-        view_more_answers_buttons = post.find_elements(By.XPATH, ".//div[@role='button']")
-        if view_more_answers_buttons:
-            print("found buttons")
-            for button in view_more_answers_buttons:
-                # search on the classes of the span below the button
-                spans = button.find_elements(By.CSS_SELECTOR, "span.x78zum5.x1w0mnb.xeuugli")
-                if spans:
-                    print("found a button")
-                    print(f"Button text: {button.text}")
-                    # print(f"Button outer HTML: {button.get_attribute('outerHTML')}")
-                    button.click()  # Click the button
-                    print("We've clicked view more answers")
-                    input("Press Enter to continue...")
+        # # Look for the "View more answers" button within each post
+        # # view_more_answers_buttons = post.find_elements(By.XPATH, ".//div[@role='button'][contains(@class, 'x193iq5w xeuugli')]")
+        # view_more_answers_buttons = post.find_elements(By.XPATH, ".//div[@role='button']")
+        # if view_more_answers_buttons:
+        #     print("found buttons")
+        #     for button in view_more_answers_buttons:
+        #         # search on the classes of the span below the button
+        #         spans = button.find_elements(By.CSS_SELECTOR, "span.x78zum5.x1w0mnb.xeuugli")
+        #         if spans:
+        #             print("found a button")
+        #             print(f"Button text: {button.text}")
+        #             # print(f"Button outer HTML: {button.get_attribute('outerHTML')}")
+        #             button.click()  # Click the button
+        #             print("We've clicked view more answers")
+        #             input("Press Enter to continue...")
 
 
-                    # time.sleep(5)  # Wait for the loading to complete
+        #             # time.sleep(5)  # Wait for the loading to complete
 
-                    print("We're going to check the modal")
-                    # Assuming there's only one modal you are interested in
-                    modal = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@role='dialog']")))
-                    print(modal)
-                    comments = modal.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
+        #             print("We're going to check the modal")
+        #             # Assuming there's only one modal you are interested in
+        #             modal = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@role='dialog']")))
+        #             print(modal)
+        #             comments = modal.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
                     
-                    print(f"Found {len(comments)} comments")  # Debugging output
-                    for post_text_element in comments:
-                        text_content = post_text_element.text
-                        print("Modal content:", text_content)
+        #             print(f"Found {len(comments)} comments")  # Debugging output
+        #             for post_text_element in comments:
+        #                 text_content = post_text_element.text
+        #                 print("Modal content:", text_content)
 
             
-                    print("finished the view more answers")
+        #             print("finished the view more answers")
 
-        # ik moet de modal terug sluiten
+        #             # ik moet de modal terug sluiten
 
         # Extract text from each post
         # else:
-        #     post_texts = post.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
-        #     for post_text_element in post_texts:
-                
-        #         # for debugging
-        #         # inner_html = post_text_element.get_attribute('innerHTML')
-        #         # print("InnerHTML:", inner_html)
+        post_texts = post.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
+        for post_text_element in post_texts:
+            
+            # for debugging
+            # inner_html = post_text_element.get_attribute('innerHTML')
+            # print("InnerHTML:", inner_html)
 
-        #         text_content = post_text_element.text
-        #         print("Post content:", text_content)
+            text_content = post_text_element.text
+            print("Post content:", text_content)
 
         print("End of this post")
 
