@@ -73,52 +73,28 @@ for post in posts:
                 spans = button.find_elements(By.CSS_SELECTOR, "span.x78zum5.x1w0mnb.xeuugli")
                 if spans:
                     print("found a button")
+                    print(f"Button text: {button.text}")
+                    # print(f"Button outer HTML: {button.get_attribute('outerHTML')}")
                     button.click()  # Click the button
+                    print("We've clicked view more answers")
                     input("Press Enter to continue...")
 
 
+                    # time.sleep(5)  # Wait for the loading to complete
 
-        # # Keeping view more answers on hold for now - it's confusing
-        # # Check if the button exists
-        # if view_more_answers_buttons:
-        #     print("We found a view more answers button")
-        #     # If the button exists, click it
-        #     view_more_answers_button = view_more_answers_buttons[0]  # Assuming there is only one such button per post
-        #     print(view_more_answers_buttons)
-        #     print(view_more_answers_button)
-        #     print("displayed", view_more_answers_button.is_displayed()) # this was always false
-        #     print("enabled", view_more_answers_button.is_enabled())
-        #     # if view_more_answers_button.is_displayed() and view_more_answers_button.is_enabled():
-        #     if view_more_answers_button.is_enabled():
+                    print("We're going to check the modal")
+                    # Assuming there's only one modal you are interested in
+                    modal = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@role='dialog']")))
+                    print(modal)
+                    comments = modal.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
+                    
+                    print(f"Found {len(comments)} comments")  # Debugging output
+                    for post_text_element in comments:
+                        text_content = post_text_element.text
+                        print("Modal content:", text_content)
 
-        #         print("We're going to click view more answers")
-        #         view_more_answers_button.click()
-        #         print("We're clicked view more answers")
-        #         input("Press Enter to continue...")
-
-        #         # Wait for the additional answers to load, if necessary
-        #         # Assume you've navigated to and opened the modal
-        #         # Wait for the modal to be visible
-        #         print("We're going to check the modal")
-        #         # modal = WebDriverWait(driver, 20).until(
-        #         #     EC.visibility_of_element_located((By.XPATH, "//div[@role='dialog']"))
-        #         # )
-        #         modal = driver.find_elements(By.XPATH,"//div[@role='dialog']")
-
-        #         print(modal)
-        #         # Find all comments within the modal
-        #         # Adjust the selector based on actual structure
-        #         comments = modal.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
-                
-        #         print(f"Found {len(comments)} comments")  # Debugging output
-        #         for post_text_element in comments:
-        #             text_content = post_text_element.text
-        #             print("Modal Comment Text:", text_content)
-
-        #         # # Extract text from each post
-        #         # post_texts = post.find_elements(By.XPATH, ".//div[contains(@style, 'text-align: start')]")
-         
-        #         print("finished the view more answers")
+            
+                    print("finished the view more answers")
 
         # ik moet de modal terug sluiten, ik moet zorgen dat ie geen andere posts gaat lezen buiten de modal
 
@@ -138,8 +114,8 @@ for post in posts:
         print("End of this post")
 
     except Exception as e:
-        # print("Error extracting post/comment:", str(e))
-        print("Error extracting post/comment:")
+        print("Error extracting post/comment:", str(e))
+        # print("Error extracting post/comment")
 
 # Close the browser
 
