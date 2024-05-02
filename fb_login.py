@@ -96,8 +96,7 @@ for post in posts:
             
                     print("finished the view more answers")
 
-        # ik moet de modal terug sluiten, ik moet zorgen dat ie geen andere posts gaat lezen buiten de modal
-
+        # ik moet de modal terug sluiten
 
         # Extract text from each post
         # else:
