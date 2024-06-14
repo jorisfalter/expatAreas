@@ -12,14 +12,24 @@ import csv
 import datetime
 today = datetime.date.today()
 
+
+import time
+import os
+from dotenv import load_dotenv
+# Load environment variables from .env file
+load_dotenv()
+from selenium.webdriver.common.keys import Keys
+
+
+
 groupUrl="https://www.facebook.com/groups/1041306749227527"
 url='https://www.facebook.com/api/graphql/'
 
 
 h = {
     "Accept": "*/*",
-    "Accept-Encoding": "gzip, deflate, br, zstd",
-    "Accept-Language": "en-US,en;q=0.9,ar-YE;q=0.8,ar;q=0.7",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "en-US,en;q=0.8",
     "Content-Length": "2827",
     "Content-Type": "application/x-www-form-urlencoded",
     "Cookie": "",
@@ -27,17 +37,16 @@ h = {
     "Origin": "https://www.facebook.com",
     "Priority": "u=1, i",
     "Referer": "https://www.facebook.com/groups/1041306749227527/?sorting_setting=CHRONOLOGICAL",
-    "Sec-Ch-Prefers-Color-Scheme": "dark",
     "Sec-Ch-Ua": '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
     "Sec-Ch-Ua-Full-Version-List": '"Chromium";v="124.0.6367.208", "Google Chrome";v="124.0.6367.208", "Not-A.Brand";v="99.0.0.0"',
     "Sec-Ch-Ua-Mobile": "?0",
     "Sec-Ch-Ua-Model": '""',
-    "Sec-Ch-Ua-Platform": '"Windows"',
-    "Sec-Ch-Ua-Platform-Version": '"10.0.0"',
+    "Sec-Ch-Ua-Platform": '"macOS"',
+    "Sec-Ch-Ua-Platform-Version": '"14.4.1"',
     "Sec-Fetch-Dest": "empty",
     "Sec-Fetch-Mode": "cors",
     "Sec-Fetch-Site": "same-origin",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "X-Asbd-Id": "129477",
     "X-Fb-Friendly-Name": "GroupsCometFeedRegularStoriesPaginationQuery",
     "X-Fb-Lsd": "Z-b6QttFDbsSUKKKkhUjED"
@@ -49,10 +58,23 @@ h = {
 options = Options()
 # options.add_argument(r"user-data-dir=/Users/joris/Documents/Projects/expatAreas/testNewFbGroup/User Data")
 options.add_argument(r"user-data-dir=/Users/joris/Library/Application Support/Google/Chrome/User Data")
+options.add_argument("--disable-notifications")  # Disable all notifications
+
 driver = webdriver.Chrome(options=options)
 driver.maximize_window()
 driver.implicitly_wait(10)
 driver.set_page_load_timeout(50)
+
+# Open Facebook and login
+driver.get("https://www.facebook.com")
+time.sleep(2)  # Wait for the page to load
+# driver.find_element(By.ID, "email").send_keys(os.getenv('FB_EMAIL'))
+# driver.find_element(By.ID, "pass").send_keys(os.getenv('FB_PASS'))
+# driver.find_element(By.ID, "pass").send_keys(Keys.RETURN)
+
+# Navigate to the group
+# time.sleep(5)  # Wait for the login to complete
+
 driver.get(groupUrl)
 page_source = driver.page_source
 soup = BeautifulSoup(page_source, "html.parser")
@@ -67,8 +89,19 @@ for  i in json_data['require'][0][-1][0]['__bbox']['require']:
    
     if str(i).find('end_cursor')!=-1:
         break
-end_cursor=i[-1][-1]['__bbox']['result']['data']['page_info']['end_cursor']
+# print(json.dumps(i[-1][-1], indent=2))
+# print(json.dumps(i[-1][-1]['__bbox']['result']['data']['group']['if_viewer_can_see_highlight_units']['highlight_units']))
+print(json.dumps(i[-1][-1]['__bbox']['result']['data']['group']['if_viewer_can_see_highlight_units']['highlight_units']['page_info']['end_cursor']))
+end_cursor=i[-1][-1]['__bbox']['result']['data']['group']['if_viewer_can_see_highlight_units']['highlight_units']['page_info']['end_cursor']
 print(end_cursor)
+
+# Extract cookies from Selenium session
+selenium_cookies = driver.get_cookies()
+cookies_dict = {cookie['name']: cookie['value'] for cookie in selenium_cookies}
+
+# Format cookies for requests
+cookies_str = "; ".join([f"{name}={value}" for name, value in cookies_dict.items()])
+h['Cookie'] = cookies_str
 
 
 while True:
@@ -76,12 +109,12 @@ while True:
         posts=[]
         data = {
         
-        "av": 100004893364568,
+        "av": 1102553674,
     "__aaid": "0",
-    "__user": "100004893364568",
+    "__user": "1102553674",
     "__a": "1",
-    "__req": "9",
-    "__hs": "19860.HYP:comet_pkg.2.1..2.1",
+    "__req": "r",
+    "__hs": "19888.HYP:comet_pkg.2.1..2.1",
     "dpr": "1",
     "__ccg": "MODERATE",
     "__rev": "1013589094",
@@ -100,11 +133,13 @@ while True:
     "fb_api_req_friendly_name": "GroupsCometFeedRegularStoriesPaginationQuery",
     "variables": '{"count":3,"cursor":"'+end_cursor+'","feedLocation":"GROUP","feedType":"DISCUSSION","feedbackSource":0,"focusCommentID":null,"privacySelectorRenderLocation":"COMET_STREAM","renderLocation":"group","scale":1,"sortingSetting":"CHRONOLOGICAL","stream_initial_count":1,"useDefaultActor":false,"useGroupFeedWithEntQL_EXPERIMENTAL":false,"id":"374703029246504","__relay_internal__pv__CometImmersivePhotoCanUserDisable3DMotionrelayprovider":false,"__relay_internal__pv__IsWorkUserrelayprovider":false,"__relay_internal__pv__IsMergQAPollsrelayprovider":false,"__relay_internal__pv__CometUFIReactionsEnableShortNamerelayprovider":false,"__relay_internal__pv__CometUFIShareActionMigrationrelayprovider":true,"__relay_internal__pv__CometIsAdaptiveUFIEnabledrelayprovider":false,"__relay_internal__pv__StoriesArmadilloReplyEnabledrelayprovider":false,"__relay_internal__pv__StoriesRingrelayprovider":false,"__relay_internal__pv__EventCometCardImage_prefetchEventImagerelayprovider":false}',
         "server_timestamps": True,
-        "doc_id": 6982860548480180
+        "doc_id": 7188178894556645
         }
         sleep(random.randint(1,7))
         
         response = requests.post(url, data=data,headers=h)
+        print(response.text)
+        print("debug1")
         print( response.text.split('\/permalink\/'))
         for i in response.text.split('\/permalink\/')[1:]:
             post = i.split(',')[0].replace('"',"").replace('/','').replace('\\','').replace('}','')
@@ -112,6 +147,7 @@ while True:
                 print(post)
                 posts.append(post)
 
+        print("debug2")
         print(posts)
         # save to txt
         with open("posts.txt", "a") as file:
@@ -129,6 +165,7 @@ while True:
             timestamp=int(x.replace('\\":','').replace('":','').split(',')[0])
             dt_object = datetime.datetime.utcfromtimestamp(timestamp)
             check.append((today-dt_object.date()).days>=366)
+        print("debug3")
         print(check)
             
         if all(check):

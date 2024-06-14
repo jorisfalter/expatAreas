@@ -48,6 +48,7 @@ h = {
 
 options = Options()
 options.add_argument(r"user-data-dir=C:\Users\Shatha\AppData\Local\Google\Chrome\User Data")
+
 driver = webdriver.Chrome(options=options)
 driver.maximize_window()
 driver.implicitly_wait(10)
