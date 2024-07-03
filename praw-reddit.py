@@ -23,18 +23,22 @@ def get_all_comments(submission):
 
 # Open a CSV file to write the data
 with open('top_1000.csv', 'w', newline='') as csvfile:
-    fieldnames = ['title', 'score', 'num_comments', 'author']
+    fieldnames = ['title', 'body','score', 'num_comments', 'author']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     for post in top_posts:
         print(f'Title: {post.title}')
         writer.writerow({
             'title': post.title,
+            'body': post.selftext,
             'score': post.score,
             'num_comments': post.num_comments,
             'author': str(post.author)
         })
         comments = get_all_comments(post)
         for comment in comments:
+            writer.writerow({
+                'body': comment.body
+            })
             print(f'Comment by {comment.author}: {comment.body}')
             # write comments to CVS
