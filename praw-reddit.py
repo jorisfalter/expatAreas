@@ -14,7 +14,7 @@ reddit_id = os.getenv('REDDIT_ID')
 reddit = praw.Reddit(client_id=reddit_id, client_secret=reddit_secret, user_agent='Amsterdam-last-year')
 
 # Get the top 1,000 posts from the subreddit
-top_posts = reddit.subreddit('Amsterdam').new(limit=10)
+top_posts = reddit.subreddit('Amsterdam').new(limit=100)
 
 # Function to fetch all comments from a post
 def get_all_comments(submission):
