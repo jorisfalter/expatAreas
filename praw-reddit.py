@@ -38,7 +38,9 @@ with open('top_1000.csv', 'w', newline='') as csvfile:
         comments = get_all_comments(post)
         for comment in comments:
             writer.writerow({
+                # 'title': comment.level,
                 'body': comment.body
+
             })
             print(f'Comment by {comment.author}: {comment.body}')
             # write comments to CVS
