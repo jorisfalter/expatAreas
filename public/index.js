@@ -1,10 +1,6 @@
-//// This is the public Mapbox code >> change to one specific for this
-mapboxgl.accessToken =
-  "pk.eyJ1Ijoiam9yaXNib3JpcyIsImEiOiJjbG93aTdpb2cwNjBxMmptb2YyMXIxY2kwIn0.lHB4wVJZ8uNndWlXrzzVFw";
-
-const map = new mapboxgl.Map({
+const map = new maplibregl.Map({
   container: "map",
-  style: "mapbox://styles/jorisboris/clmdk27ll01bw01qx24l12bnw",
+  style: "https://tiles.openfreemap.org/styles/liberty",
   center: [10.549316, 39.986836],
   zoom: 3,
 });
