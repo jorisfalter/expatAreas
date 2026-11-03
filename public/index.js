@@ -1,194 +1,127 @@
-const map = new maplibregl.Map({
-  container: "map",
-  style: "https://tiles.openfreemap.org/styles/liberty",
-  center: [10.549316, 39.986836],
-  zoom: 3,
-});
+(function () {
+  const COLORS = { fill: "#e76f51", hover: "#0f4c5c", line: "#ffffff" };
+  const VIEWS = {
+    full: { center: [10.5, 30], zoom: 1.3 },
+    mediterranean: { center: [12, 39.5], zoom: 3.4 },
+    greece: { center: [24.3, 37.8], zoom: 5.2 },
+    iberia: { center: [-6, 38.8], zoom: 4.8 },
+    caribbean: { center: [-75, 17], zoom: 4 },
+    southeastAsia: { center: [107, 2], zoom: 3.6 },
+    scandinavia: { center: [17, 59], zoom: 4 },
+  };
 
-map.on("moveend", function () {
-  var center = map.getCenter();
-  var zoom = map.getZoom();
+  const cards = Array.from(document.querySelectorAll(".card[data-slug]"));
+  const names = {};
+  cards.forEach((c) => (names[c.dataset.slug] = c.querySelector("h3").textContent));
 
-  // Store center latitude and longitude
-  localStorage.setItem("mapCenterLat", center.lat);
-  localStorage.setItem("mapCenterLng", center.lng);
-  localStorage.setItem("mapZoom", zoom);
-});
-
-if (
-  localStorage.getItem("mapCenterLat") &&
-  localStorage.getItem("mapCenterLng") &&
-  localStorage.getItem("mapZoom")
-) {
-  var lat = localStorage.getItem("mapCenterLat");
-  var lng = localStorage.getItem("mapCenterLng");
-  var zoom = localStorage.getItem("mapZoom");
-
-  map.setCenter([lng, lat]);
-  map.setZoom(zoom);
-}
-
-// Function to load GeoJSON data from a file
-function loadGeoJSON(url) {
-  console.log("we're in the loadGeoJson function");
-  return fetch(url)
-    .then((response) => response.json())
-    .catch((error) => console.log("Error loading the GeoJSON data:", error));
-}
-
-// function to add layers
-function addLayersToMap(regionsData) {
-  console.log("we're in the 'on load' function");
-  // Add source and layer for each region
-  Object.entries(regionsData).forEach(([regionId, geojsonData]) => {
-    if (!map.getSource(regionId)) {
-      map.addSource(regionId, { type: "geojson", data: geojsonData });
+  function store(get, k, v) {
+    try {
+      return get ? localStorage.getItem(k) : localStorage.setItem(k, v);
+    } catch (e) {
+      return null;
     }
-    // Add the fill layer
-    map.addLayer({
-      id: `${regionId}-layer`,
-      type: "fill",
-      source: regionId,
-      paint: { "fill-color": "#0000FF", "fill-opacity": 0.6 },
+  }
+
+  const saved = store(true, "mapView");
+  let start = VIEWS.mediterranean;
+  try {
+    if (saved) start = JSON.parse(saved);
+  } catch (e) {}
+
+  const map = new maplibregl.Map({
+    container: "map",
+    style: "https://tiles.openfreemap.org/styles/liberty",
+    center: start.center,
+    zoom: start.zoom,
+    cooperativeGestures: window.matchMedia("(pointer: coarse)").matches,
+    attributionControl: { compact: true },
+  });
+  map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+
+  map.on("moveend", () => {
+    const c = map.getCenter();
+    store(false, "mapView", JSON.stringify({ center: [c.lng, c.lat], zoom: map.getZoom() }));
+  });
+
+  let hovered = null;
+  function setHover(slug) {
+    if (hovered === slug) return;
+    if (hovered && map.getSource("regions")) map.setFeatureState({ source: "regions", id: hovered }, { hover: false });
+    hovered = slug;
+    if (slug && map.getSource("regions")) map.setFeatureState({ source: "regions", id: slug }, { hover: true });
+  }
+
+  const tooltip = document.getElementById("tooltip");
+
+  Promise.all([
+    fetch("/regions.json").then((r) => r.json()),
+    new Promise((res) => (map.loaded() ? res() : map.on("load", res))),
+  ]).then(([data]) => {
+    const features = Object.entries(data)
+      .filter(([slug]) => names[slug])
+      .map(([slug, f]) => ({ ...f, properties: { slug, name: names[slug] } }));
+
+    map.addSource("regions", {
+      type: "geojson",
+      data: { type: "FeatureCollection", features },
+      promoteId: "slug",
     });
-    // Add the line layer for border
     map.addLayer({
-      id: `${regionId}-border`,
-      type: "line",
-      source: regionId,
-      layout: {},
+      id: "regions-fill",
+      type: "fill",
+      source: "regions",
       paint: {
-        "line-color": "#000000", // Black color for the border
-        "line-width": 1, // Width of the border line
+        "fill-color": ["case", ["boolean", ["feature-state", "hover"], false], COLORS.hover, COLORS.fill],
+        "fill-opacity": 0.55,
       },
     });
-
-    // Add click event listener for the layer
-    map.on("click", `${regionId}-layer`, function () {
-      // Redirect to the URL
-      window.location.href = `/${regionId}`;
+    map.addLayer({
+      id: "regions-line",
+      type: "line",
+      source: "regions",
+      paint: { "line-color": COLORS.line, "line-width": 1.5 },
     });
 
-    // Change the cursor to a pointer when the mouse is over the layer.
-    map.on("mouseenter", `${regionId}-layer`, function () {
+    map.on("mousemove", "regions-fill", (e) => {
+      const f = e.features[0];
       map.getCanvas().style.cursor = "pointer";
+      setHover(f.id);
+      tooltip.textContent = f.properties.name;
+      tooltip.style.left = e.point.x + "px";
+      tooltip.style.top = e.point.y + "px";
+      tooltip.classList.add("show");
     });
-
-    // Change it back to a pointer when it leaves.
-    map.on("mouseleave", `${regionId}-layer`, function () {
+    map.on("mouseleave", "regions-fill", () => {
       map.getCanvas().style.cursor = "";
+      setHover(null);
+      tooltip.classList.remove("show");
+    });
+    map.on("click", "regions-fill", (e) => {
+      window.location.href = "/" + e.features[0].properties.slug;
     });
 
-    // Add mouseenter event for each layer
-    map.on("mouseenter", `${regionId}-layer`, function (e) {
-      map.getCanvas().style.cursor = "pointer";
-      var tooltip = document.getElementById("tooltip");
-      var tooltipContent = document.getElementById("regionDescription");
-      tooltipContent.innerHTML = e.features[0].properties.tooltipContent;
-      tooltip.style.display = "block";
-      // Get the mouse pointer's coordinates on the page
-      var mouseX = e.originalEvent.clientX;
-      var mouseY = e.originalEvent.clientY;
-      tooltip.style.left = mouseX + "px";
-      tooltip.style.top = mouseY + "px";
-    });
-
-    // Add mouseleave event for each layer
-    map.on("mouseleave", `${regionId}-layer`, function () {
-      map.getCanvas().style.cursor = "";
-      var tooltip = document.getElementById("tooltip");
-      tooltip.style.display = "none";
+    cards.forEach((c) => {
+      c.addEventListener("mouseenter", () => setHover(c.dataset.slug));
+      c.addEventListener("mouseleave", () => setHover(null));
     });
   });
-}
 
-loadGeoJSON("regions.json").then((regionsData) => {
-  console.log("we're gonna wait until map is loaded now");
-  if (map.loaded()) {
-    // map already loaded
-    addLayersToMap(regionsData);
-  } else {
-    map.on("load", function () {
-      addLayersToMap(regionsData);
-    });
+  function activate(group, btn) {
+    group.querySelectorAll(".chip").forEach((b) => b.classList.toggle("is-active", b === btn));
   }
-});
 
-//////////////// TOP FILTERS
-// Coordinates and zoom levels for each region for the filters on top
-const locations = {
-  full: {
-    center: [10.54, 39.98],
-    zoom: 1,
-  },
-  europe: {
-    center: [10.54, 39.98],
-    zoom: 3,
-  },
-  caribbean: {
-    center: [-75.34, 18.04],
-    zoom: 4,
-  },
-  southeastAsia: {
-    center: [104.19, 0.97],
-    zoom: 3.5,
-  },
-  greece: {
-    center: [24.27, 38.69],
-    zoom: 4.8,
-  },
-  iberia: {
-    center: [-4.42, 39.79],
-    zoom: 4.8,
-  },
-  scandinavia: {
-    center: [15.35, 58.73],
-    zoom: 4,
-  },
-};
-
-// Function to fly to a specific region
-function flyToRegion(region) {
-  if (locations[region]) {
-    map.flyTo({
-      center: locations[region].center,
-      zoom: locations[region].zoom,
-      essential: true,
+  document.querySelectorAll("[data-view]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      activate(btn.parentElement, btn);
+      map.flyTo({ ...VIEWS[btn.dataset.view], essential: true });
     });
-  }
-}
-
-// Attaching event listeners using querySelector
-document.querySelector(".full-button").addEventListener("click", function () {
-  flyToRegion("full");
-});
-
-document.querySelector(".europe-button").addEventListener("click", function () {
-  flyToRegion("europe");
-});
-
-document
-  .querySelector(".caribbean-button")
-  .addEventListener("click", function () {
-    flyToRegion("caribbean");
   });
 
-document
-  .querySelector(".south-east-asia-button")
-  .addEventListener("click", function () {
-    flyToRegion("southeastAsia");
+  document.querySelectorAll("[data-filter]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      activate(btn.parentElement, btn);
+      const f = btn.dataset.filter;
+      cards.forEach((c) => (c.hidden = f !== "all" && c.dataset.area !== f));
+    });
   });
-
-document.querySelector(".greece-button").addEventListener("click", function () {
-  flyToRegion("greece");
-});
-
-document.querySelector(".iberia-button").addEventListener("click", function () {
-  flyToRegion("iberia");
-});
-
-document
-  .querySelector(".scandinavia-button")
-  .addEventListener("click", function () {
-    flyToRegion("scandinavia");
-  });
+})();

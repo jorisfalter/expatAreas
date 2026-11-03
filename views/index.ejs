@@ -1,69 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Expat Areas</title>
-
-    <script src="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.js"></script>
-    <link href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-
+  <%- include('partials/head', {
+    title: 'Expat Areas: where to live and work remotely with your family',
+    description: 'A hand-picked map of ' + regions.length + ' places where remote-working families can live: honest pros and cons, schools, communities and walkability.',
+    path: '/',
+    image: '/img/hero/' + regions[0].properties.pic.replace('.avif', '.webp')
+  }) %>
+  <link href="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.css" rel="stylesheet">
 </head>
-
 <body>
-    <div class="airlineFilter">
-        <h1>Expat Dream Destinations </h1>
-        <h2 class="frontpageH2">Where To Work Remote With Your Family And Children</h2>
+  <%- include('partials/header') %>
 
-        <span class="shortcut-tiles">
-            <div class="image-container full-button">
-                <img class="airline" src="full.png" id="full" alt="Full">
-                <div class="overlay-text">Full Map</div>
-            </div>
-            <div class="image-container europe-button">
-                <img class="airline" src="europe.png" id="europe" alt="Europe">
-                <div class="overlay-text">Mediterranean</div>
-            </div>
-            <div class="image-container caribbean-button">
-                <img class="airline" src="caribbean.png" id="caribbean" alt="caribbean">
-                <div class="overlay-text">Caribbean</div>
-            </div>
-            <div class="image-container south-east-asia-button">
-                <img class="airline" src="south-east-asia.png" id="south-east-asia" alt="south-east-asia">
-                <div class="overlay-text">South-East Asia</div>
-            </div>
-            <div class="image-container greece-button">
-                <img class="airline" src="greece.png" id="greece" alt="greece">
-                <div class="overlay-text">Greece</div>
-            </div>
-            <div class="image-container iberia-button">
-                <img class="airline" src="iberia.png" id="iberia" alt="iberia">
-                <div class="overlay-text">Iberian Peninsula</div>
-            </div>
-            <div class="image-container scandinavia-button">
-                <img class="airline" src="scandinavia.png" id="scandinavia" alt="scandinavia">
-                <div class="overlay-text">Scandinavia</div>
-            </div>
-        </span>
-    </div>
-    <div id="map"></div>
+  <main>
+    <section class="hero wrap">
+      <p class="eyebrow">For remote workers with kids</p>
+      <h1>Find a place where your family can actually <em>live</em>.</h1>
+      <p class="lede">An honest, hand-curated map of <%= regions.length %> destinations: why you'd move there, why you might not, and what it's like for schools, community and getting around.</p>
+    </section>
 
-    <div id="tooltip">
-        <!-- Region Description; innerhtml gets changed by the js I assume-->
-        <h3 id="regionDescription">test description</h3>
+    <section id="map-section" class="wrap">
+      <div class="chips" role="toolbar" aria-label="Jump to a part of the world">
+        <button class="chip" data-view="full">Whole world</button>
+        <button class="chip is-active" data-view="mediterranean">Mediterranean</button>
+        <button class="chip" data-view="greece">Greece</button>
+        <button class="chip" data-view="iberia">Iberia</button>
+        <button class="chip" data-view="caribbean">Caribbean</button>
+        <button class="chip" data-view="southeastAsia">Southeast Asia</button>
+        <button class="chip" data-view="scandinavia">Scandinavia</button>
+      </div>
+      <div class="map-frame">
+        <div id="map" aria-label="Map of destinations"></div>
+        <div id="tooltip" role="status"></div>
+      </div>
+      <p class="map-hint muted">Tap a highlighted area to open its guide.</p>
+    </section>
 
+    <section id="destinations" class="wrap">
+      <div class="section-head">
+        <h2>All destinations</h2>
+        <div class="chips" role="toolbar" aria-label="Filter destinations">
+          <button class="chip is-active" data-filter="all">All</button>
+          <% areas.forEach(function (a) { %>
+            <button class="chip" data-filter="<%= a %>"><%= a %></button>
+          <% }) %>
+        </div>
+      </div>
 
-    </div>
+      <ul class="card-grid">
+        <% regions.forEach(function (r) { %>
+          <li class="card" data-area="<%= r.area %>" data-slug="<%= r.slug %>">
+            <a href="/<%= r.slug %>">
+              <img src="/img/thumb/<%= r.properties.pic.replace('.avif', '.webp') %>" alt="<%= r.name %>" loading="lazy" width="720" height="480">
+              <div class="card-body">
+                <p class="card-meta"><%= r.country %></p>
+                <h3><%= r.name %></h3>
+                <p class="card-why"><%= r.properties.why.replace(/<[^>]*>/g, ' ') %></p>
+              </div>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    </section>
+  </main>
 
+  <%- include('partials/footer') %>
 
-    <!-- <script src="index.js"></script> -->
-    <script type="module" src="index.js"></script>
+  <script src="https://unpkg.com/maplibre-gl@5.12.0/dist/maplibre-gl.js"></script>
+  <script src="/index.js"></script>
 </body>
-
 </html>

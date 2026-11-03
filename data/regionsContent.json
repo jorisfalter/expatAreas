@@ -1,8 +1,9 @@
 {
   "testKey": "testValue",
-
   "algarve": {
     "name": "Algarve",
+    "country": "Portugal",
+    "area": "Southern Europe",
     "properties": {
       "pic": "algarve.avif",
       "picowner": "Tim ten Cate - Unsplash",
@@ -20,9 +21,10 @@
       "Number of international schools": "13"
     }
   },
-
   "tenerife": {
     "name": "Tenerife",
+    "country": "Spain",
+    "area": "Southern Europe",
     "properties": {
       "pic": "tenerife.avif",
       "picowner": "Maria Bobrova - Unsplash",
@@ -31,9 +33,10 @@
       "walkability": "Poor, mostly car"
     }
   },
-
   "crete": {
     "name": "Crete",
+    "country": "Greece",
+    "area": "Southern Europe",
     "properties": {
       "pic": "crete.avif",
       "picowner": "Elena Dimaki - Unsplash",
@@ -42,9 +45,10 @@
       "walkability": "Poor, mostly car. People drive like maniacs."
     }
   },
-
   "corfu": {
     "name": "Corfu",
+    "country": "Greece",
+    "area": "Southern Europe",
     "properties": {
       "pic": "corfu.avif",
       "picowner": "Calin Stan - Unsplash",
@@ -52,20 +56,22 @@
       "whyNot": "Uncertain about schools and healthcare."
     }
   },
-
   "ibiza": {
     "name": "Ibiza",
+    "country": "Spain",
+    "area": "Southern Europe",
     "properties": {
-      "pic": "Ibiza.avif",
+      "pic": "ibiza.avif",
       "picowner": "Monique - Unsplash",
       "why": "Has everything the global traveller wants, given the very international audience visiting this island.",
       "whyNot": "Pricey in high season. Not a well known destination for remote workers, rather for partying.",
       "schools": "The Learning Project"
     }
   },
-
   "mallorca": {
     "name": "Mallorca",
+    "country": "Spain",
+    "area": "Southern Europe",
     "properties": {
       "pic": "mallorca.avif",
       "picowner": "Redcharlie - Unsplash",
@@ -74,9 +80,10 @@
       "usefulLinks": "<a href='https://www.reddit.com/r/mallorca/'>Reddit</a><br><a href='https://www.facebook.com/groups/expatsinmallorca/'>Facebook</a>"
     }
   },
-
   "phuket": {
     "name": "Phuket",
+    "country": "Thailand",
+    "area": "Southeast Asia",
     "properties": {
       "pic": "phuket.avif",
       "picowner": "Bradley Prentice - Unsplash",
@@ -88,9 +95,10 @@
       "usefulLinks": "<a href='https://www.facebook.com/groups/1511516022497356'>Phuket Expat Families Facebook Group</a>"
     }
   },
-
   "bali": {
     "name": "Bali",
+    "country": "Indonesia",
+    "area": "Southeast Asia",
     "properties": {
       "pic": "bali.avif",
       "picowner": "Niklas Weiss - Unsplash",
@@ -100,9 +108,10 @@
       "communities": "Boundless Life"
     }
   },
-
   "curacao": {
     "name": "Curacao",
+    "country": "Curaçao",
+    "area": "Caribbean & Central America",
     "properties": {
       "pic": "curacao.avif",
       "picowner": "Lucas Swennen - Unsplash",
@@ -110,9 +119,10 @@
       "whyNot": "High criminality, pretty remote as it lies in front of Venezuela."
     }
   },
-
   "tortola": {
     "name": "Tortola",
+    "country": "British Virgin Islands",
+    "area": "Caribbean & Central America",
     "properties": {
       "pic": "tortola.avif",
       "picowner": "Dietmar Lichota - Unsplash",
@@ -120,9 +130,10 @@
       "whyNot": "Probably a lot of retirees rather than vibrant, young families with children. But that's only an opinion."
     }
   },
-
   "playaDelCarmen": {
     "name": "Playa Del Carmen",
+    "country": "Mexico",
+    "area": "Caribbean & Central America",
     "properties": {
       "pic": "playaDelCarmen.avif",
       "picowner": "Conor Luddy - Unsplash",
@@ -130,9 +141,10 @@
       "whyNot": "Too many tourists and retirees, rather than hipster remote workers."
     }
   },
-
   "tulum": {
     "name": "Tulum",
+    "country": "Mexico",
+    "area": "Caribbean & Central America",
     "properties": {
       "pic": "tulum.avif",
       "picowner": "Anna Sullivan - Unsplash",
@@ -141,9 +153,10 @@
       "schools": "The Green School"
     }
   },
-
   "roatan": {
     "name": "Roatan",
+    "country": "Honduras",
+    "area": "Caribbean & Central America",
     "properties": {
       "pic": "roatan.avif",
       "picowner": "Stephen T King - Unsplash",
@@ -152,9 +165,10 @@
       "communities": "Prospera"
     }
   },
-
   "sintraCascais": {
     "name": "Sintra & Cascais",
+    "country": "Portugal",
+    "area": "Southern Europe",
     "properties": {
       "pic": "sintra.avif",
       "picowner": "Katia De Juan - Unsplash",
@@ -164,9 +178,10 @@
       "schools": "International Sharing School"
     }
   },
-
   "syros": {
     "name": "Syros",
+    "country": "Greece",
+    "area": "Southern Europe",
     "properties": {
       "pic": "syros.avif",
       "picowner": "Toula Douka - Unsplash",
@@ -175,9 +190,10 @@
       "communities": "Boundless Life"
     }
   },
-
   "andalucia": {
     "name": "Andalucia",
+    "country": "Spain",
+    "area": "Southern Europe",
     "properties": {
       "pic": "andalucia.avif",
       "picowner": "Jorge Fernández Salas - Unsplash",
@@ -186,9 +202,10 @@
       "schools": "Alma Forest School"
     }
   },
-
   "helsinki": {
     "name": "Helsinki",
+    "country": "Finland",
+    "area": "Northern Europe & Alps",
     "properties": {
       "pic": "helsinki.avif",
       "picowner": "Tapio Haaja - Unsplash",
@@ -200,9 +217,10 @@
       ]
     }
   },
-
   "copenhagen": {
     "name": "Copenhagen",
+    "country": "Denmark",
+    "area": "Northern Europe & Alps",
     "properties": {
       "pic": "copenhagen.avif",
       "picowner": "Rolands Varsbergs - Unsplash",
@@ -210,9 +228,10 @@
       "whyNot": "The weather probably."
     }
   },
-
   "stockholm": {
     "name": "Stockholm",
+    "country": "Sweden",
+    "area": "Northern Europe & Alps",
     "properties": {
       "pic": "stockholm.avif",
       "picowner": "Raphael Andres - Unsplash",
@@ -220,10 +239,10 @@
       "whyNot": "Scandinavia is overall pricier."
     }
   },
-
   "engadinSanktMoritz": {
     "name": "Engadin - Sankt Moritz",
-    "picowner": "Marc Siegrist - Unsplash",
+    "country": "Switzerland",
+    "area": "Northern Europe & Alps",
     "properties": {
       "pic": "sanktMoritz.avif",
       "picowner": "...",
@@ -234,6 +253,8 @@
   },
   "singapore": {
     "name": "Singapore",
+    "country": "Singapore",
+    "area": "Southeast Asia",
     "properties": {
       "pic": "singapore.avif",
       "picowner": "Mike Enerio - Unsplash",
@@ -245,6 +266,8 @@
   },
   "cyprus": {
     "name": "Cyprus",
+    "country": "Cyprus",
+    "area": "Southern Europe",
     "properties": {
       "pic": "cyprus.avif",
       "picowner": "Datingscout - Unsplash",
@@ -254,6 +277,8 @@
   },
   "lasCatalinas": {
     "name": "Las Catalinas",
+    "country": "Costa Rica",
+    "area": "Caribbean & Central America",
     "properties": {
       "pic": "lasCatalinas.avif",
       "picowner": "Lisa van Vliet - Unsplash",
@@ -263,6 +288,8 @@
   },
   "paros": {
     "name": "Paros",
+    "country": "Greece",
+    "area": "Southern Europe",
     "properties": {
       "pic": "paros.avif",
       "picowner": "Despina Galani - Unsplash",
@@ -272,6 +299,8 @@
   },
   "mykonos": {
     "name": "Mykonos",
+    "country": "Greece",
+    "area": "Southern Europe",
     "properties": {
       "pic": "mykonos.avif",
       "picowner": "Jeet Dhanoa - Unsplash",
@@ -281,6 +310,8 @@
   },
   "rhodes": {
     "name": "Rhodes",
+    "country": "Greece",
+    "area": "Southern Europe",
     "properties": {
       "pic": "rhodes.avif",
       "picowner": "Serhat Beyazkaya - Unsplash",
@@ -290,6 +321,8 @@
   },
   "valencia": {
     "name": "Valencia",
+    "country": "Spain",
+    "area": "Southern Europe",
     "properties": {
       "pic": "valencia.avif",
       "picowner": "travelnow.or.crylater - Unsplash",

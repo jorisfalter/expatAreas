@@ -1,117 +1,89 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>
-        <%= city.name %>
-    </title>
-    <script src="https://kit.fontawesome.com/52ca80b39c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
+  <%- include('partials/head', {
+    title: city.name + ', ' + city.country + ' for expat families | Expat Areas',
+    description: description,
+    path: '/' + city.slug,
+    image: '/img/hero/' + city.properties.pic.replace('.avif', '.webp')
+  }) %>
 </head>
+<body>
+  <%- include('partials/header') %>
 
-<body class="city-page-body">
-
-    <div class="location-banner">
-        <button onclick="location.href='/'" id="closeButton">&times;</button>
-
-        <img class="location-banner-pic" src=<%=city.properties.pic %>>
-        <div class="photographer-name">
-            <%= city.properties.picowner %>
+  <main>
+    <section class="city-hero" style="background-image: url('/img/hero/<%= city.properties.pic.replace('.avif', '.webp') %>')">
+      <div class="city-hero-shade">
+        <div class="wrap">
+          <a class="back-link" href="/#destinations">← All destinations</a>
+          <p class="eyebrow light"><%= city.country %> · <%= city.area %></p>
+          <h1><%= city.name %></h1>
         </div>
+      </div>
+      <span class="photo-credit">Photo: <%= city.properties.picowner %></span>
+    </section>
 
+    <div class="wrap city-content">
+      <div class="verdict">
+        <article class="verdict-card pro">
+          <h2><span aria-hidden="true">👍</span> Why <%= city.name %>?</h2>
+          <p><%- city.properties.why %></p>
+        </article>
+        <article class="verdict-card con">
+          <h2><span aria-hidden="true">🤔</span> Why not?</h2>
+          <p><%- city.properties.whyNot %></p>
+        </article>
+      </div>
 
+      <% if (facts.length) { %>
+        <dl class="facts">
+          <% facts.forEach(function (f) { %>
+            <div><dt><%= f[0] %></dt><dd><%= f[1] %></dd></div>
+          <% }) %>
+        </dl>
+      <% } %>
+
+      <% if (sections.length) { %>
+        <div class="info-grid">
+          <% sections.forEach(function (s) { %>
+            <section class="info-card">
+              <h2><span aria-hidden="true"><%= s[2] %></span> <%= s[1] %></h2>
+              <div><%- city.properties[s[0]] %></div>
+            </section>
+          <% }) %>
+        </div>
+      <% } %>
+
+      <% if (Array.isArray(city.properties.reviews) && city.properties.reviews.length) { %>
+        <section class="voices">
+          <h2>What people say</h2>
+          <% city.properties.reviews.forEach(function (rv) { %>
+            <blockquote><%- rv %></blockquote>
+          <% }) %>
+        </section>
+      <% } %>
+
+      <% if (related.length) { %>
+        <section class="related">
+          <h2>More in <%= city.area %></h2>
+          <ul class="card-grid small">
+            <% related.forEach(function (r) { %>
+              <li class="card">
+                <a href="/<%= r.slug %>">
+                  <img src="/img/thumb/<%= r.properties.pic.replace('.avif', '.webp') %>" alt="<%= r.name %>" loading="lazy" width="720" height="480">
+                  <div class="card-body">
+                    <p class="card-meta"><%= r.country %></p>
+                    <h3><%= r.name %></h3>
+                  </div>
+                </a>
+              </li>
+            <% }) %>
+          </ul>
+        </section>
+      <% } %>
     </div>
-    <h1>Welcome to <%= city.name %>!
-    </h1>
+  </main>
 
-    <!-- Add more city-specific content placeholders as needed -->
-    <h2><i class="fa fa-question"></i> Why <%= city.name %>?
-    </h2>
-    <p><%- city.properties.why %></p>
-
-    <h2><i class="fa fa-question"></i> Why Not?
-    </h2>
-    <p><%- city.properties.whyNot %></p>
-
-
-
-
-    <!-- This one is not aligning properly, they should all start on the same line -->
-    <% if (city.properties.communities && city.properties.communities.trim().length> 0) { %>
-        <h2><i class="fa fa-group"></i> Communities</h2>
-        <p><%- city.properties.communities %></p>
-        <% } %>
-
-            <% if (city.properties.schools && city.properties.schools.trim().length> 0) { %>
-                <h2><i class="fas fa-building"></i> Schools</h2>
-                <p><%- city.properties.schools %></p>
-                <% } %>
-
-                    <% if (city.properties.weather && city.properties.weather.trim().length> 0) { %>
-                        <h2><i class="fa fa-sun-o"></i> Weather</h2>
-                        <p><%- city.properties.weather %></p>
-                        <% } %>
-
-                            <% if (city.properties.population && city.properties.population.trim().length> 0) { %>
-                                <h2><i class="fa fa-bar-chart"></i> Population</h2>
-                                <p><%- city.properties.population %></p>
-                                <% } %>
-
-                                    <% if (city.properties.walkability && city.properties.walkability.trim().length> 0)
-                                        { %>
-                                        <h2><i class="fa fa-walking"></i> Walkability</h2>
-                                        <p><%- city.properties.walkability %></p>
-                                        <% } %>
-
-                                            <% if (city.properties.usefulLinks &&
-                                                city.properties.usefulLinks.trim().length> 0)
-                                                { %>
-                                                <h2><i class="fa fa-link"></i> Useful links</h2>
-                                                <p><%- city.properties.usefulLinks %></p>
-                                                <% } %>
-
-
-
-                                                    <!-- <h2><i class="fa fa-pencil-square-o"></i> What People Say:</h2> -->
-
-                                                    <!-- <p>
-
-                                        <% if (city.properties.reviews && city.properties.reviews.length> 0) { %>
-
-
-                                            <% for(let key in city.properties.reviews) { %>
-                                                <p>
-                                                    <%- city.properties.reviews[key] %>
-                                                </p>
-                                                <% } %>
-                                                    <% } else { %>
-                                                        <p>People said nothing yet ... At least not here!</p>
-                                                        <% } %>
-
-                                    </p> -->
-
-                                                    <!-- User Comments Section -->
-                                                    <!-- <div id="userComments"></div> -->
-
-                                                    <!-- Comment Form -->
-
-                                                    <!-- <h4>Add Your Voice:</h4> -->
-
-                                                    <!-- <form id="commentForm">
-                                        <textarea id="commentInput" rows="4" cols="50" required></textarea>
-                                        <button type="submit">Add Review</button>
-                                    </form> -->
-
-                                                    <div class="returnButton">
-                                                        <button class="plane-button" onclick="location.href='/'">&#9992
-                                                            Fly Back
-                                                            To
-                                                            Homepage</button>
-                                                    </div>
+  <%- include('partials/footer') %>
 </body>
-
 </html>

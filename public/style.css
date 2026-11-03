@@ -1,177 +1,163 @@
+:root {
+  --bg: #fbf7f1;
+  --surface: #ffffff;
+  --ink: #1d2a2f;
+  --muted: #5d6b70;
+  --line: #e8e0d4;
+  --teal: #0f4c5c;
+  --coral: #e76f51;
+  --sand: #f4e9d8;
+  --pro: #e7f3ee;
+  --con: #fbeee8;
+  --radius: 16px;
+  --shadow: 0 1px 2px rgba(29, 42, 47, 0.06), 0 8px 24px rgba(29, 42, 47, 0.06);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Mapbox code from European Startups */
-#map {
-  width: 80%;
-  height: 400px; /* or you can use percentages, like 60vh */
-  margin:auto;
+a { color: var(--teal); }
+img { max-width: 100%; display: block; }
+h1, h2, h3 { font-family: var(--serif); line-height: 1.15; margin: 0 0 0.4em; font-weight: 700; }
+.wrap { width: min(1160px, 100% - 32px); margin-inline: auto; }
+.muted { color: var(--muted); }
+.eyebrow {
+  text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem;
+  font-weight: 700; color: var(--coral); margin: 0 0 0.6rem;
+}
+.eyebrow.light { color: #ffd9c9; }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 62ch; }
+
+/* Header / footer */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(251, 247, 241, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.brand { font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
+.header-nav { display: flex; gap: 20px; }
+.header-nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+.header-nav a:hover { color: var(--coral); }
+.site-footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--line); background: var(--sand); font-size: 0.92rem; }
+.footer-inner p { max-width: 70ch; }
+
+/* Hero */
+.hero { padding: 56px 0 28px; }
+.hero h1 { font-size: clamp(2.1rem, 5vw, 3.6rem); max-width: 18ch; font-weight: 500; }
+.hero h1 em { color: var(--coral); font-style: italic; }
+
+/* Chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+.chip {
+  font: inherit; font-size: 0.9rem; font-weight: 500;
+  padding: 7px 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.chip:hover { border-color: var(--teal); }
+.chip.is-active { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+/* Map */
+.map-frame { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); }
+#map { width: 100%; height: min(62vh, 560px); min-height: 360px; }
+#tooltip {
+  position: absolute; pointer-events: none; z-index: 5;
+  transform: translate(-50%, calc(-100% - 12px));
+  background: var(--ink); color: #fff; font-size: 0.85rem; font-weight: 600;
+  padding: 5px 10px; border-radius: 8px; white-space: nowrap;
+  opacity: 0; transition: opacity 0.1s;
+}
+#tooltip.show { opacity: 1; }
+.map-hint { font-size: 0.85rem; margin: 10px 0 0; }
+
+/* Destinations */
+#destinations { margin-top: 64px; }
+.section-head h2 { font-size: 2rem; }
+.card-grid {
+  list-style: none; padding: 0; margin: 8px 0 0;
+  display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.card {
+  background: var(--surface); border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line); box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(29, 42, 47, 0.12); }
+.card a { color: inherit; text-decoration: none; display: block; height: 100%; }
+.card img { aspect-ratio: 3 / 2; object-fit: cover; width: 100%; height: auto; }
+.card-body { padding: 14px 18px 18px; }
+.card-meta { margin: 0 0 2px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.card h3 { font-size: 1.35rem; margin-bottom: 6px; }
+.card-why {
+  margin: 0; color: var(--muted); font-size: 0.93rem;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
 
+/* City page */
+.city-hero { position: relative; min-height: min(56vh, 520px); background-size: cover; background-position: center; display: flex; }
+.city-hero-shade {
+  flex: 1; display: flex; align-items: flex-end; padding: 32px 0 44px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 30%, rgba(10,30,36,0.78));
+}
+.city-hero h1 { color: #fff; font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 500; margin: 0; }
+.back-link {
+  display: inline-block; margin-bottom: 18px; color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 500;
+  background: rgba(255,255,255,0.16); padding: 6px 12px; border-radius: 999px; backdrop-filter: blur(6px);
+}
+.back-link:hover { background: rgba(255,255,255,0.28); }
+.photo-credit { position: absolute; right: 12px; top: 10px; color: rgba(255,255,255,0.75); font-size: 0.75rem; }
 
-.frontpageH2{
-  color:blue;
-  padding-bottom:10px;
+.city-content { margin-top: -28px; position: relative; }
+.verdict { display: grid; gap: 20px; grid-template-columns: 1fr 1fr; }
+.verdict-card { border-radius: var(--radius); padding: 26px 28px; box-shadow: var(--shadow); border: 1px solid var(--line); }
+.verdict-card.pro { background: var(--pro); }
+.verdict-card.con { background: var(--con); }
+.verdict-card h2 { font-size: 1.45rem; }
+.verdict-card p { margin: 0; }
 
-} 
+.facts { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; }
+.facts div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 16px; }
+.facts dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; }
+.facts dd { margin: 0; font-weight: 600; }
 
-h2{
-  font-size:1.2em;
-  color:blue;
-} 
+.info-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 28px; }
+.info-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
+.info-card h2 { font-size: 1.2rem; }
+.info-card a { font-weight: 600; }
 
-h3{
-  color:white;
-  font-weight: 400;
-  margin-top: 2px;
-  margin-bottom: 2px;
+.voices { margin-top: 48px; }
+.voices h2 { font-size: 1.8rem; }
+.voices blockquote {
+  margin: 0; padding: 8px 28px; background: var(--surface); border-left: 4px solid var(--coral);
+  border-radius: 0 var(--radius) var(--radius) 0; color: #33454b;
 }
 
-a{
-  text-decoration: none !important;
-}
+.related { margin-top: 56px; }
+.related h2 { font-size: 1.8rem; }
+.card-grid.small { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
 
-.airlineFilter{
-  width: 80%;
-  margin:auto;
-  text-align:center;
-}
+.not-found { padding: 64px 0; }
+.pill-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.pill-list a { display: block; padding: 6px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; }
 
-.airline {
-  border-style: solid;
-  border-width: 5px;
-  border-color: black;
-  border-radius: 5px;
-  width: 130px; /* Fixed width */
-  height: 70px; /* Fixed height */
-  object-fit: contain;
-  box-sizing: border-box; /* Include the border in the width and height */
-}
-
-.image-container {
-  position: relative;
-  display: inline-block; /* Adjust the display as needed for your layout */
-  width: 130px; /* Same width as the .airline class for consistency */
-  font-size: 0; /* This removes any extra space that inline-block might generate */
-  box-sizing: border-box; /* Include the border in the width and height */
-}
-
-.overlay-text {
-  position: absolute;
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Centers the text exactly */
-  width: 80%; /* Now this is 80% of the container's width */
-  color: white; /* Text color */
-  font-size: 12px; /* Adjust as necessary, consider dynamic sizing for longer text */
-  font-weight: bold; /* Makes the text bold */
-  text-align: center; /* Ensures text is centered horizontally */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  margin: 0; /* Ensuring no additional margin */
-  padding: 0 10%; /* Add padding to prevent text from touching the borders */
-}
-
-#tooltip{
-  display: none; 
-  position: absolute; 
-  padding: 10px; 
-  background: blue; 
-  border-radius: 10px; 
-  font-size: 14px; 
-  text-align: center; 
-  pointer-events: none; 
-  z-index: 10;
-}
-
-.location-banner-pic{
-  /* height: 40px; */
-  /* width: auto; */
-  width: 100%;    /* Makes the image take the full width of its container */
-  max-height: 180px; /* Sets the maximum height of the image */
-  object-fit: cover; /* Ensures the image covers the full container without distortion */
-  display: block; /* Removes any default margin or padding */
-  border-style:solid;
-  border-color:black;
-  border-radius: 10px;
-  border-width:1px;
-}
-
-.city-page-body{
-  margin-left: 20%;
-  margin-right: 20%;
-  position:relative;
-  background-color: #FFE6E6;
-}
-
-/* mobile only */
-@media screen and (max-width: 768px) {
-  .city-page-body{
-    margin-left:5%;
-    margin-right: 5%;
-    position:relative;
-    background-color: #FFE6E6;
-  }
-
-  #map {
-    width: 95%;
-    height: 400px; /* or you can use percentages, like 60vh */
-    margin:auto;
-  }
-
-  .airlineFilter{
-    width: 95%;
-    margin:auto;
-  }
-
-  .image-container{
-    /* height: 40px;
-    overflow:hidden; */
-    width: 100px;
-  }
-
-  .airline{
-    width:100px;
-  }
-
-  .overlay-text{
-    font-size:10px;
-  }
-}
-
-.location-banner {
-  position: relative;
-  width: 100%; /* Adjust based on your layout */
-  max-height: 180px; /* Match your image's max height */
-  border-radius: 10px; /* Match your image's border-radius */
-  overflow: hidden; /* Ensures nothing spills outside the container's rounded corners */
-}
-
-#closeButton {
-  position: absolute; /* Fix position relative to the viewport */
-  top: 10px;       /* Distance from the top */
-  right: 10px;     /* Distance from the right */
-  border: none;    /* Optional: removes the border */
-  background-color: white; /* Optional: makes the background transparent */
-  font-size: 24px; /* Adjusts the size of the 'X' */
-  cursor: pointer; /* Changes cursor to pointer on hover */
-  border-color:black;
-  border-style:solid;
-  border-radius:10%;
-}
-
-.photographer-name {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
-  color: gray; /* Text color */
-  font-size: 12px; /* Small font size */
-  padding: 2px 5px; /* Padding around the text */
-  margin: 4px; /* Margin from the bottom right corner */
-  border-radius: 5px; /* Optional: rounded corners for the text background */
-}
-
-.returnButton{
-  padding-top:10px;
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .hero { padding-top: 36px; }
+  .header-nav { gap: 14px; }
+  .verdict { grid-template-columns: 1fr; }
+  .verdict-card { padding: 20px; }
+  #map { height: 58vh; }
 }
