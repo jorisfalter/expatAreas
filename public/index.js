@@ -5,6 +5,7 @@
     mediterranean: { center: [12, 39.5], zoom: 3.4 },
     greece: { center: [24.3, 37.8], zoom: 5.2 },
     iberia: { center: [-6, 38.8], zoom: 4.8 },
+    albania: { center: [19.65, 41.3], zoom: 8 },
     caribbean: { center: [-75, 17], zoom: 4 },
     southeastAsia: { center: [107, 2], zoom: 3.6 },
     scandinavia: { center: [17, 59], zoom: 4 },

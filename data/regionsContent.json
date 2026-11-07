@@ -332,6 +332,34 @@
       "usefulLinks": "<a href='https://www.reddit.com/r/.../'>Reddit</a><br><a href='https://www.facebook.com/groups/.../'>Facebook</a>"
     }
   },
+  "tirana": {
+    "name": "Tirana",
+    "country": "Albania",
+    "area": "Southern Europe",
+    "properties": {
+      "pic": "tirana.avif",
+      "picowner": "Mario Beqollari - Unsplash",
+      "why": "The capital and the beating heart of Albania: young, buzzing, full of cafés, and cheaper than its EU neighbours. Albania isn't in the EU or Schengen yet, and that's an advantage: days here don't count toward the Schengen 90/180 limit, which is handy on a non-EU passport. There's also a dedicated residence permit for remote workers, and the beach is under an hour away.",
+      "whyNot": "The non-EU advantage has an expiry date: Albania wants to join the EU by 2030, though that's a political goal rather than a promise. Not being in the EU also means no EU health card and no automatic right to stay for EU citizens, so plan on private health insurance and a permit. Heavy traffic and lots of construction.",
+      "walkability": "The centre around Skanderbeg Square and Blloku is walkable. Further out you'll want a car or taxi, and there's no metro.",
+      "schools": "Tirana International School (QSI)<br>World Academy of Tirana (IB)",
+      "usefulLinks": "<a href='https://e-albania.al'>e-Albania</a> (official portal, check here for the current rules on the Unique Permit for digital workers)"
+    }
+  },
+  "durres": {
+    "name": "Durrës",
+    "country": "Albania",
+    "area": "Southern Europe",
+    "properties": {
+      "pic": "durres.avif",
+      "picowner": "Gautham Rajeev - Unsplash",
+      "why": "Tirana's seaside sibling, about 35 km from the capital: a long sandy beach, a palm-lined seafront and a Roman amphitheatre right in town. You get beach life with the capital's schools and airport within reach. Same non-EU perk as Tirana: days here don't count toward the Schengen 90/180 limit.",
+      "whyNot": "The beachfront is heavily built up and gets packed in summer. The 2019 earthquake hit the city hard, so check how a building was constructed or repaired before you rent or buy. As in Tirana, the non-EU advantage may fade if Albania joins the EU, and you'll want private health insurance.",
+      "walkability": "The centre and seafront promenade are walkable. The long beach strip south of town is easier by car.",
+      "schools": "We couldn't find a dedicated international school in Durrës, so expect to look at the schools in Tirana.",
+      "usefulLinks": "<a href='https://e-albania.al'>e-Albania</a> (official portal, check here for the current rules on the Unique Permit for digital workers)"
+    }
+  },
   "empty": {
     "name": "",
     "properties": {

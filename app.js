@@ -84,6 +84,7 @@ app.get("/:cityName", (req, res) => {
   const sections = SECTIONS.filter(([k]) => typeof p[k] === "string" && p[k].trim());
   const related = regions
     .filter((r) => r.area === city.area && r.slug !== city.slug)
+    .sort((a, b) => (b.country === city.country) - (a.country === city.country))
     .slice(0, 3);
   res.render("locationPage", {
     city,
